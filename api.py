@@ -58,16 +58,14 @@ class ZillowError(Exception):
         """
         Exception.__init__(self, status)        # Exception is an old-school class
         self.status = status
+        self.message = self.code[int(status)]
         self.url = url
         self.response = response
 
     def __str__(self):
-        """
-        """
-        return 'Error %s\nQuery: %s' % (code[status], self.url)
+        return repr(self.message) 
 
     def __unicode__(self):
-        """Return a unicode representation of this :exc:`GeocoderError`."""
         return unicode(self.__str__())
 
 
@@ -93,27 +91,45 @@ class ZillowWrapper(object):
 
         """
         self.api_key = api_key
-        # pass
 
-    # @omnimethod
-    def get_data(self, address, zipcode):
+    def get_deep_search_results(self, address, zipcode):
         """
+        GetDeepSearchResults API
         """
 
+        url = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm'
         params = {
             'address': address,
-            'zipcode': zipcode,
+            'citystatezip': zipcode,
             'zws-id': self.api_key # ZillowWrapper.ZILLOW_API_KEY
             }
+        return self.get_data(url, params)
+
+    def get_updated_property_details(self, zpid):
+        """
+        GetUpdatedPropertyDetails API
+        """
+        url = 'http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm'
+
+        params = {
+            'zpid': zpid,
+            'zws-id': self.api_key # ZillowWrapper.ZILLOW_API_KEY
+            }
+        return self.get_data(url, params)
+
+    # @omnimethod
+    def get_data(self, url, params):
+        """
+        """
 
         try:
             request = requests.get(
-                url = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm',
-                # ZillowWrapper.ZILLOW_QUERY_URL,
+                url = url,
                 params = params,
                 headers = {
                     'User-Agent': 'pyzillow/' + VERSION + ' (Python)'
                 })
+            print request.url
         except (ConnectionError, TooManyRedirects, Timeout):
             raise ZillowFail
 
@@ -125,16 +141,17 @@ class ZillowWrapper(object):
         try:
             response = ElementTree.fromstring(request.text)
         except ParseError:
-            print "Zillow response is not a valid XML (%s)" % (params['address'])
+            print "Zillow response is not a valid XML" # (%s)" % (params['address'])
             raise ZillowFail
 
         if not response.findall('response'):
-            print "Zillow returned no results (%s)" % (params['address'])
+            print "Zillow returned no results" # (%s)" % (params['address'])
             raise ZillowNoResults
 
-        if not response.findall('code') == '0':
-            raise ZillowError(response.findall('code'))
+        if response.findall('message/code')[0].text is not '0':
+            raise ZillowError(int(code)) 
         else:
             return response
+
 
 
