@@ -165,11 +165,10 @@ class ZillowResults(object):
         """
         Creates instance of GeocoderResult from the provided JSON data array
         """
-        self.data = data.findall('response/results')
+        # self.data = data.findall('response/results')
         self.len = len(self.data)
         self.current_index = 0
         self.current_data = self.data[0]
-        self.tag = 'result'
 
     def __len__(self):
         return self.len
@@ -209,42 +208,42 @@ class ZillowResults(object):
         """
         Returns the zillow id
         """
-        return self.current_data.find('result/zpid').text
+        return self.current_data.find(self.attribute_mapping['zpid']).text
 
     @property
     def home_type(self):
         """
         Returns the type of housing, based on useCode
         """
-        return self.current_data.find('result/useCode').text
+        return self.current_data.find(self.attribute_mapping['home_type']).text
 
     @property
     def home_detail_link(self):
         """
         """
-        return self.current_data.find('result/links/homedetails').text
+        return self.current_data.find(self.attribute_mapping['home_detail_link']).text
 
     @property
     def graph_data_link(self):
         """
         graphsanddata
         """
-        return self.current_data.find('result/links/graphsanddata').text
+        return self.current_data.find(self.attribute_mapping['graph_data_link']).text
 
     @property
     def map_this_home_link(self):
         """
         mapthishome
         """
-        return self.current_data.find('result/links/mapthishome').text
+        return self.current_data.find(self.attribute_mapping['map_this_home_link']).text
 
     @property
     def latitude(self):
-        return self.current_data.find('result/address/latitude').text
+        return self.current_data.find(self.attribute_mapping['latitude']).text
 
     @property
     def longitude(self):
-        return self.current_data.find('result/address/longitude').text
+        return self.current_data.find(self.attribute_mapping['longitude']).text
 
     @property
     def coordinates(self):
@@ -258,21 +257,21 @@ class ZillowResults(object):
         """
         taxAssessmentYear
         """
-        return self.current_data.find('result/taxAssessmentYear').text
+        return self.current_data.find(self.attribute_mapping['tax_year']).text
 
     @property
     def tax_value(self):
         """
         taxAssessment
         """
-        return self.current_data.find('result/taxAssessment').text
+        return self.current_data.find(self.attribute_mapping['tax_value']).text
     
     @property
     def year_built(self):
         """
         yearBuilt
         """
-        return self.current_data.find('result/yearBuilt').text
+        return self.current_data.find(self.attribute_mapping['year_built']).text
 
     @property
     def area_unit(self):
@@ -286,82 +285,198 @@ class ZillowResults(object):
         """
         lotSizeSqFt
         """
-        return self.current_data.find('result/lotSizeSqFt').text
+        return self.current_data.find(self.attribute_mapping['property_size']).text
 
     @property
     def home_size(self):
         """
         finishedSqFt
         """
-        return self.current_data.find('result/finishedSqFt').text
+        return self.current_data.find(self.attribute_mapping['home_size']).text
 
     @property
     def bathrooms(self):
         """
         bathrooms
         """
-        return self.current_data.find('result/bathrooms').text
+        return self.current_data.find(self.attribute_mapping['bathrooms']).text
 
     @property
     def bedrooms(self):
         """
         bedrooms
         """
-        return self.current_data.find('result/bedrooms').text
+        return self.current_data.find(self.attribute_mapping['bedrooms']).text
 
     @property
     def last_sold_date(self):
         """
         lastSoldDate
         """
-        return self.current_data.find('result/lastSoldDate').text
+        return self.current_data.find(self.attribute_mapping['last_sold_date']).text
 
     @property
     def last_sold_price_currency(self):
         """
         lastSoldPrice currency
         """
-        return self.current_data.find('result/lastSoldPrice').attrib["currency"]
+        return self.current_data.find(self.attribute_mapping['last_sold_price']).attrib["currency"]
 
     @property
-    def last_sold_date(self):
+    def last_sold_price(self):
         """
         lastSoldDate
         """
-        return self.current_data.find('result/lastSoldPrice').text
+        return self.current_data.find(self.attribute_mapping['last_sold_price']).text
 
 
 class GetDeepSearchResults(ZillowResults):
     """
     """
-    pass
+    attribute_mapping = {
+        'zpid':             'result/zpid',
+        'home_type':        'result/useCode',
+        'home_detail_link': 'result/links/homedetails',
+        'graph_data_link':  'result/links/graphsanddata',
+        'map_this_home_link': 'result/links/mapthishome',
+        'latitude':         'result/address/latitude',
+        'longitude':        'result/address/longitude',
+        'tax_year':         'result/taxAssessmentYear',
+        'tax_value':        'result/taxAssessment',
+        'year_built':       'result/yearBuilt',
+        'property_size':    'result/lotSizeSqFt',
+        'home_size':        'result/finishedSqFt',
+        'bathrooms':        'result/bathrooms',
+        'bedrooms':         'result/bedrooms',
+        'last_sold_date':   'result/lastSoldDate',
+        'last_sold_price_currency': 'result/lastSoldPrice',
+        'last_sold_price':  'result/lastSoldPrice',
+    }
+
+    def __init__(self, data):
+        """
+        
+        """
+        self.data = data.findall('response/results')
+        super(GetDeepSearchResults, self).__init__(data)
 
 
 class GetUpdatedPropertyDetails(ZillowResults):
     """
     """
+    attribute_mapping = {
+        # attributes in common with GetDeepSearchResults
+        'zpid':             'zpid', 
+        'home_type':        'editedFacts/useCode',
+        'home_detail_link': 'links/homedetails',
+        'graph_data_link':  '',
+        'map_this_home_link': '',
+        'latitude':         'address/latitude',
+        'longitude':        'address/longitude',
+        'tax_year':         '',
+        'tax_value':        '',
+        'year_built':       'editedFacts/yearBuilt',
+        'property_size':    'editedFacts/lotSizeSqFt',
+        'home_size':        'editedFacts/finishedSqFt',
+        'bathrooms':        'editedFacts/bathrooms',
+        'bedrooms':         'editedFacts/bedrooms',
+        'last_sold_date':   '',
+        'last_sold_price_currency': '',
+        'last_sold_price':  '',
+        # new attributes in GetUpdatedPropertyDetails
+        'photo_gallery':    'links/photoGallery',
+        'home_info':        'links/homeInfo',
+        'year_updated':     'editedFacts/yearUpdated', 
+        'floors':           'editedFacts/numFloors', 
+        'basement':         'editedFacts/basement', 
+        'roof':             'editedFacts/roof',
+        'view':             'editedFacts/view', 
+        'heating_source':   'editedFacts/heatingSource', 
+        'heating_system':   'editedFacts/heatingType', 
+        'rooms':            'editedFacts/rooms', 
+        'neighborhood':     'neighborhood', 
+        'school_district':  'schoolDistrict', 
+        #'': '', 
+    }
+
     def __init__(self, data):
         """
-        Creates instance of GeocoderResult from the provided JSON data array
+        #### Creates instance of GeocoderResult from the provided JSON data array
         """
+        self.data = data.findall('response')
         super(GetUpdatedPropertyDetails, self).__init__(data)
-        # self.tag = 'editedFacts'
-        self.tag = 'result'
         
+
     # lastUpdatedDate
 
     @property
-    def bedrooms(self):
+    def photo_gallery(self):
         """
-        bedrooms
         """
-        return self.current_data.find(self.tag + '/bedrooms').text
-
+        return self.current_data.find(self.attribute_mapping['photo_gallery']).text
 
     @property
-    def last_sold_date2(self):
+    def home_info(self):
         """
-        lastSoldDate
         """
-        return '>>>>', self.current_data.find('result/lastSoldPrice').text
+        return self.current_data.find(self.attribute_mapping['home_info']).text
 
+    @property
+    def year_updated(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['year_updated']).text  
+
+    @property
+    def floors(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['floors']).text  
+
+    @property
+    def basement(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['basement']).text
+
+    @property
+    def roof(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['roof']).text
+
+    @property
+    def view(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['view']).text
+
+    @property
+    def heating_source(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['heating_source']).text
+
+    @property
+    def heating_system(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['heating_system']).text
+
+    @property
+    def rooms(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['rooms']).text
+
+    @property
+    def neighborhood(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['neighborhood']).text
+
+    @property
+    def school_district(self):
+        """
+        """
+        return self.current_data.find(self.attribute_mapping['school_district']).text
