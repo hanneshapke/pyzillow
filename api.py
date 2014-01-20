@@ -1,4 +1,5 @@
 import requests
+import sys
 from requests.exceptions import (ConnectionError, TooManyRedirects, 
                                 Timeout, HTTPError)
 
@@ -101,7 +102,7 @@ class ZillowWrapper(object):
         params = {
             'address': address,
             'citystatezip': zipcode,
-            'zws-id': self.api_key # ZillowWrapper.ZILLOW_API_KEY
+            'zws-id': self.api_key 
             }
         return self.get_data(url, params)
 
@@ -113,7 +114,7 @@ class ZillowWrapper(object):
 
         params = {
             'zpid': zpid,
-            'zws-id': self.api_key # ZillowWrapper.ZILLOW_API_KEY
+            'zws-id': self.api_key 
             }
         return self.get_data(url, params)
 
@@ -154,4 +155,213 @@ class ZillowWrapper(object):
             return response
 
 
+class ZillowResults(object):
+    """
+    """
+
+    attribute_mapping = {}
+
+    def __init__(self, data):
+        """
+        Creates instance of GeocoderResult from the provided JSON data array
+        """
+        self.data = data.findall('response/results')
+        self.len = len(self.data)
+        self.current_index = 0
+        self.current_data = self.data[0]
+        self.tag = 'result'
+
+    def __len__(self):
+        return self.len
+
+    def __iter__(self):
+        return self
+
+    def return_next(self):
+        if self.current_index >= self.len:
+            raise StopIteration
+        self.current_data = self.data[self.current_index]
+        self.current_index += 1
+        return self
+
+    def __unicode__(self):
+        return self.zillow_id
+
+    if sys.version_info[0] >= 3:  # Python 3
+        def __str__(self):
+            return self.__unicode__()
+
+        def __next__(self):
+            return self.return_next()
+    else:  # Python 2
+        def __str__(self):
+            return self.__unicode__().encode('utf8')
+
+        def next(self):
+            return self.return_next()
+
+    @property
+    def count(self):
+        return self.len
+
+    @property
+    def zillow_id(self):
+        """
+        Returns the zillow id
+        """
+        return self.current_data.find('result/zpid').text
+
+    @property
+    def home_type(self):
+        """
+        Returns the type of housing, based on useCode
+        """
+        return self.current_data.find('result/useCode').text
+
+    @property
+    def home_detail_link(self):
+        """
+        """
+        return self.current_data.find('result/links/homedetails').text
+
+    @property
+    def graph_data_link(self):
+        """
+        graphsanddata
+        """
+        return self.current_data.find('result/links/graphsanddata').text
+
+    @property
+    def map_this_home_link(self):
+        """
+        mapthishome
+        """
+        return self.current_data.find('result/links/mapthishome').text
+
+    @property
+    def latitude(self):
+        return self.current_data.find('result/address/latitude').text
+
+    @property
+    def longitude(self):
+        return self.current_data.find('result/address/longitude').text
+
+    @property
+    def coordinates(self):
+        """
+        Return a (latitude, longitude) coordinate pair of the current result
+        """
+        return self.latitude, self.longitude
+
+    @property
+    def tax_year(self):
+        """
+        taxAssessmentYear
+        """
+        return self.current_data.find('result/taxAssessmentYear').text
+
+    @property
+    def tax_value(self):
+        """
+        taxAssessment
+        """
+        return self.current_data.find('result/taxAssessment').text
+    
+    @property
+    def year_built(self):
+        """
+        yearBuilt
+        """
+        return self.current_data.find('result/yearBuilt').text
+
+    @property
+    def area_unit(self):
+        """
+        lotSizeSqFt
+        """
+        return u'SqFt'
+
+    @property
+    def property_size(self):
+        """
+        lotSizeSqFt
+        """
+        return self.current_data.find('result/lotSizeSqFt').text
+
+    @property
+    def home_size(self):
+        """
+        finishedSqFt
+        """
+        return self.current_data.find('result/finishedSqFt').text
+
+    @property
+    def bathrooms(self):
+        """
+        bathrooms
+        """
+        return self.current_data.find('result/bathrooms').text
+
+    @property
+    def bedrooms(self):
+        """
+        bedrooms
+        """
+        return self.current_data.find('result/bedrooms').text
+
+    @property
+    def last_sold_date(self):
+        """
+        lastSoldDate
+        """
+        return self.current_data.find('result/lastSoldDate').text
+
+    @property
+    def last_sold_price_currency(self):
+        """
+        lastSoldPrice currency
+        """
+        return self.current_data.find('result/lastSoldPrice').attrib["currency"]
+
+    @property
+    def last_sold_date(self):
+        """
+        lastSoldDate
+        """
+        return self.current_data.find('result/lastSoldPrice').text
+
+
+class GetDeepSearchResults(ZillowResults):
+    """
+    """
+    pass
+
+
+class GetUpdatedPropertyDetails(ZillowResults):
+    """
+    """
+    def __init__(self, data):
+        """
+        Creates instance of GeocoderResult from the provided JSON data array
+        """
+        super(GetUpdatedPropertyDetails, self).__init__(data)
+        # self.tag = 'editedFacts'
+        self.tag = 'result'
+        
+    # lastUpdatedDate
+
+    @property
+    def bedrooms(self):
+        """
+        bedrooms
+        """
+        return self.current_data.find(self.tag + '/bedrooms').text
+
+
+    @property
+    def last_sold_date2(self):
+        """
+        lastSoldDate
+        """
+        return '>>>>', self.current_data.find('result/lastSoldPrice').text
 
