@@ -31,54 +31,54 @@ Installation
 ------------
 You can install this package using pip:
 
-    sudo pip install pyzillow
+    pip install pyzillow
 
-    or download the source from https://github.com/hanneshapke/pyzillow and install
+or download the source from https://github.com/hanneshapke/pyzillow and install
 
         python setup.py install
 
-        Usage
-        -----
-        For the GetDeepSearchResults API:
+Usage
+-----
+For the GetDeepSearchResults API:
 
-        from api import ZillowWrapper, GetDeepSearchResults
-        ...
-        address = 'YOUR ADDRESS'
-        zipcode = 'YOUR ZIPCODE'
-        ...
-        zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
-        deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
-        result = GetDeepSearchResults(deep_search_response) 
-        ...
-        result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
+    from api import ZillowWrapper, GetDeepSearchResults
+    ...
+    address = 'YOUR ADDRESS'
+    zipcode = 'YOUR ZIPCODE'
+    ...
+    zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+    deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
+    result = GetDeepSearchResults(deep_search_response) 
+    ...
+    result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
-        For the GetUpdatedPropertyDetails API:
+For the GetUpdatedPropertyDetails API:
 
-        from api import ZillowWrapper, GetUpdatedPropertyDetails
-        ...
-        zillow_id = 'YOUR ZILLOW ID'
-        ...
-        zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
-        updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
-        result = GetUpdatedPropertyDetails(updated_property_details_response) 
-        ...
-        result.rooms # number of rooms of the home
-
-
-        Contact Information
-        -------------------
-        Author: Hannes Hapke
-        Twitter: @hanneshapke
-        Internet: https://github.com/hanneshapke/ 
-
-        For comments, issues, requests, please contact via Github at the above website
+    from api import ZillowWrapper, GetUpdatedPropertyDetails
+    ...
+    zillow_id = 'YOUR ZILLOW ID'
+    ...
+    zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+    updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
+    result = GetUpdatedPropertyDetails(updated_property_details_response) 
+    ...
+    result.rooms # number of rooms of the home
 
 
-        Changelog
-        ---------
-        Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
+Contact Information
+-------------------
+Author: Hannes Hapke
+Twitter: @hanneshapke
+Internet: https://github.com/hanneshapke/ 
 
-        Version 0.1 > Project created
+For comments, issues, requests, please contact via Github at the above website
+
+
+Changelog
+---------
+Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
+
+Version 0.1 > Project created
 
 
 
