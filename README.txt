@@ -1,5 +1,5 @@
 ==================
-pygeocoder 0.2
+pyzillow 0.2
 ==================
 Hannes Hapke
 Miguel Paolino
@@ -31,7 +31,7 @@ Installation
 ------------
 You can install this package using pip:
 
-	sudo pip install pyzillow
+	pip install pyzillow
 
 or download the source from https://github.com/hanneshapke/pyzillow and install
 
