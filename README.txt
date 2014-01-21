@@ -53,6 +53,7 @@ Usage of the GetDeepSearchResults API
     result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
 The following attributes are currently supported:
+
     - zillow_id
     - home_type
     - home_detail_link
@@ -87,6 +88,7 @@ Usage of the GetUpdatedPropertyDetails API
     result.rooms # number of rooms of the home
 
 The following attributes are currently supported:
+
     - zillow_id
     - home_type
     - home_detail_link
@@ -112,6 +114,7 @@ The following attributes are currently supported:
     - school_district
 
 The following attributes are not provided by the API:
+
     - graph_data_link
     - map_this_home_link
     - tax_year
