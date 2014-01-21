@@ -126,7 +126,7 @@ The following attributes are not provided by the API:
 
 Contact Information
 -------------------
-Author: Hannes Hapke
+Author: Hannes Hapke (renooble)
 Twitter: @hanneshapke
 Internet: https://github.com/hanneshapke/ 
 
