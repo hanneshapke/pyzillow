@@ -31,7 +31,7 @@ setup(
     download_url='https://github.com/hanneshapke/pyzillow/archive/master.zip',
     description='Python interface for Zillow\'s API. Currently supporting GetDeepSearchResults and GetUpdatedPropertyDetails API.',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.txt'), 'r').read(),
-    py_modules=['api', '__version__'],
+    py_modules=['pyzillow', 'pyzillowerrors', '__version__'],
     provides=['pyzillow'],
     requires=['requests'],
     install_requires=['requests >= 2.2.0'],

@@ -1,5 +1,5 @@
 ==================
-pyzillow 0.2.1
+pyzillow 0.2.2
 ==================
 Hannes Hapke
 Miguel Paolino
