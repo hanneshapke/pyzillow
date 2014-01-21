@@ -1,5 +1,5 @@
 ==================
-pyzillow 0.2
+pyzillow 0.3
 ==================
 Hannes Hapke
 Miguel Paolino
@@ -21,10 +21,10 @@ BSD
 
 Dependencies
 ------------
-It has dependency on the xml.etree and requests module, included with Python versions 2.7 and later.
-requests library is needed and installed by setuptools.
+It has dependency on the xml.etree module, included with Python versions 2.7 and later.
+requests library is also needed and will be installed by setuptools.
 
-It is developed on Python 2.7 but should work on earlier versions. Not tested if It is also compatible with Python 3. Sorry.
+It is developed on Python 2.7 but should work on earlier versions. Not tested if it is also compatible with Python 3. Sorry.
 
 
 Installation
@@ -36,12 +36,12 @@ You can install this package using pip:
 or download the source from https://github.com/hanneshapke/pyzillow and install
 
     python setup.py install
+    
 
-Usage
------
-For the GetDeepSearchResults API:
+Usage of the GetDeepSearchResults API
+-------------------------------------
 
-    from api import ZillowWrapper, GetDeepSearchResults
+    from pyzillow import ZillowWrapper, GetDeepSearchResults
     ...
     address = 'YOUR ADDRESS'
     zipcode = 'YOUR ZIPCODE'
@@ -52,9 +52,31 @@ For the GetDeepSearchResults API:
     ...
     result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
-For the GetUpdatedPropertyDetails API:
+The following attributes are currently supported:
+    - zillow_id
+    - home_type
+    - home_detail_link
+    - graph_data_link
+    - map_this_home_link
+    - latitude
+    - latitude
+    - coordinates
+    - tax_year
+    - tax_value
+    - year_built
+    - property_size
+    - home_size
+    - bathrooms
+    - bedrooms
+    - last_sold_date
+    - last_sold_price_currency
+    - last_sold_price
 
-    from api import ZillowWrapper, GetUpdatedPropertyDetails
+
+Usage of the GetUpdatedPropertyDetails API
+------------------------------------------
+
+    from pyzillow import ZillowWrapper, GetUpdatedPropertyDetails
     ...
     zillow_id = 'YOUR ZILLOW ID'
     ...
@@ -63,6 +85,40 @@ For the GetUpdatedPropertyDetails API:
     result = GetUpdatedPropertyDetails(updated_property_details_response) 
     ...
     result.rooms # number of rooms of the home
+
+The following attributes are currently supported:
+    - zillow_id
+    - home_type
+    - home_detail_link
+    - photo_gallery
+    - latitude
+    - latitude
+    - coordinates
+    - year_built
+    - property_size
+    - home_size
+    - bathrooms
+    - bedrooms
+    - home_info
+    - year_updated
+    - floors
+    - basement
+    - roof
+    - view
+    - heating_sources
+    - heating_system
+    - rooms
+    - neighborhood
+    - school_district
+
+The following attributes are not provided by the API:
+    - graph_data_link
+    - map_this_home_link
+    - tax_year
+    - tax_value
+    - last_sold_date
+    - last_sold_price_currency
+    - last_sold_price
 
 
 Contact Information
@@ -76,6 +132,8 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
+Version 0.3 > pip created and code refactured
+
 Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
 
 Version 0.1 > Project created

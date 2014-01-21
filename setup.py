@@ -36,8 +36,8 @@ setup(
     requires=['requests'],
     install_requires=['requests >= 2.2.0'],
     classifiers=[
-        'Development Status :: 1 - Production/Stable',
-        'Intended Audience :: Developers',
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Financial and Insurance Industry',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2',
@@ -46,5 +46,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
     ],
     keywords='zillow real estate rental xml api address zipcode',
-    license='BSD',
+    license='MIT',
 )
