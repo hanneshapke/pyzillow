@@ -84,8 +84,8 @@ class ZillowNoResults(Exception):
 
 class ZillowWrapper(object):
 
-    ZILLOW_QUERY_URL = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm'
-    ZILLOW_API_KEY = ''
+    # ZILLOW_QUERY_URL = 'http://www.zillow.com/webservice/GetDeepSearchResults.htm'
+    # ZILLOW_API_KEY = ''
 
     def __init__(self, api_key=None):
         """
@@ -208,7 +208,7 @@ class ZillowResults(object):
         """
         Returns the zillow id
         """
-        return self.current_data.find(self.attribute_mapping['zpid']).text
+        return self.current_data.find(self.attribute_mapping['zillow_id']).text
 
     @property
     def home_type(self):
@@ -334,7 +334,7 @@ class GetDeepSearchResults(ZillowResults):
     """
     """
     attribute_mapping = {
-        'zpid':             'result/zpid',
+        'zillow_id':             'result/zpid',
         'home_type':        'result/useCode',
         'home_detail_link': 'result/links/homedetails',
         'graph_data_link':  'result/links/graphsanddata',
@@ -366,9 +366,9 @@ class GetUpdatedPropertyDetails(ZillowResults):
     """
     attribute_mapping = {
         # attributes in common with GetDeepSearchResults
-        'zpid':             'zpid', 
+        'zillow_id':        'zpid', 
         'home_type':        'editedFacts/useCode',
-        'home_detail_link': 'links/homedetails',
+        'home_detail_link': 'links/homeDetails',
         'graph_data_link':  '',
         'map_this_home_link': '',
         'latitude':         'address/latitude',
@@ -391,8 +391,8 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'basement':         'editedFacts/basement', 
         'roof':             'editedFacts/roof',
         'view':             'editedFacts/view', 
-        'heating_source':   'editedFacts/heatingSource', 
-        'heating_system':   'editedFacts/heatingType', 
+        'heating_sources':   'editedFacts/heatingSources', 
+        'heating_system':   'editedFacts/heatingSystem', 
         'rooms':            'editedFacts/rooms', 
         'neighborhood':     'neighborhood', 
         'school_district':  'schoolDistrict', 
@@ -452,10 +452,10 @@ class GetUpdatedPropertyDetails(ZillowResults):
         return self.current_data.find(self.attribute_mapping['view']).text
 
     @property
-    def heating_source(self):
+    def heating_sources(self):
         """
         """
-        return self.current_data.find(self.attribute_mapping['heating_source']).text
+        return self.current_data.find(self.attribute_mapping['heating_sources']).text
 
     @property
     def heating_system(self):
