@@ -1,5 +1,5 @@
 ==================
-pyzillow 0.3
+pyzillow 0.2.1
 ==================
 Hannes Hapke
 Miguel Paolino
@@ -135,11 +135,11 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
-Version 0.3 > pip created and code refactured
+Version 0.2.1 > pip created and code refactured
 
-Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
+Version 0.2   > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
 
-Version 0.1 > Project created
+Version 0.1   > Project created
 
 
 
