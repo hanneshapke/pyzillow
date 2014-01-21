@@ -41,28 +41,28 @@ Usage
 -----
 For the GetDeepSearchResults API:
 
-from api import ZillowWrapper, GetDeepSearchResults
-...
-address = 'YOUR ADDRESS'
-zipcode = 'YOUR ZIPCODE'
-...
-zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
-deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
-result = GetDeepSearchResults(deep_search_response) 
-...
-result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
+	from api import ZillowWrapper, GetDeepSearchResults
+	...
+	address = 'YOUR ADDRESS'
+	zipcode = 'YOUR ZIPCODE'
+	...
+	zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+	deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
+	result = GetDeepSearchResults(deep_search_response) 
+	...
+	result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
 For the GetUpdatedPropertyDetails API:
 
-from api import ZillowWrapper, GetUpdatedPropertyDetails
-...
-zillow_id = 'YOUR ZILLOW ID'
-...
-zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
-updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
-result = GetUpdatedPropertyDetails(updated_property_details_response) 
-...
-result.rooms # number of rooms of the home
+	from api import ZillowWrapper, GetUpdatedPropertyDetails
+	...
+	zillow_id = 'YOUR ZILLOW ID'
+	...
+	zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+	updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
+	result = GetUpdatedPropertyDetails(updated_property_details_response) 
+	...
+	result.rooms # number of rooms of the home
 
 
 Contact Information
