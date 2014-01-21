@@ -1,5 +1,5 @@
 ==================
-pygeocoder 0.1
+pygeocoder 0.2
 ==================
 Hannes Hapke
 Miguel Paolino
