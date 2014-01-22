@@ -1,19 +1,19 @@
 ==================
 pyzillow 0.3
 ==================
-Hannes Hapke
-Miguel Paolino
+
+By Hannes Hapke & Miguel Paolino
+
 20/01/2014
 
 
 README
 ------
-This is a Python wrapper for Zillow's API.
+This is a Python wrapper for [Zillow's API](http://www.zillow.com/howto/api/APIOverview.htm).
 
-Currrently it is supporting the GetDeepSearchResults and GetUpdatedPropertyDetails API. 
+Currrently it supports the GetDeepSearchResults and GetUpdatedPropertyDetails APIs. 
 
-It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into
-real estate data based on the Zillow database.
+It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
 License
 ------
@@ -21,10 +21,10 @@ BSD
 
 Dependencies
 ------------
-It has dependency on the xml.etree module, included with Python versions 2.7 and later.
-requests library is also needed and will be installed by setuptools.
+It requires the xml.etree module, included with Python versions 2.7 and later.
+The [requests](http://docs.python-requests.org/en/latest/index.html) library is also needed and will be installed by setuptools.
 
-It is developed on Python 2.7 but should work on earlier versions. Not tested if it is also compatible with Python 3. Sorry.
+It is developed on Python 2.7 but should work on earlier versions. We have not tested it with Python 3. Sorry.
 
 
 Installation
@@ -36,7 +36,7 @@ You can install this package using pip:
 or download the source from https://github.com/hanneshapke/pyzillow and install
 
     python setup.py install
-    
+
 
 Usage of the GetDeepSearchResults API
 -------------------------------------
@@ -135,7 +135,7 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
-Version 0.3 > pip created and code refactured
+Version 0.3 > pip created and code refactored
 
 Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
 

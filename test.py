@@ -31,6 +31,8 @@ class Test(unittest.TestCase):
     """
     def test_zillow_api_results(self):
         """
+        Unit test for GetDeepSearchResults. Note that the example response is a static
+        address that zillow provides for testing.
         """
 
         address = '2114 Bigelow Ave Seattle, WA'
@@ -50,6 +52,7 @@ class Test(unittest.TestCase):
 
     def test_deep_search_results(self):
         """
+        Unit test for the wrapper calling the GetDeepSearchResults API 
         """
 
         address = '2114 Bigelow Ave Seattle, WA'
@@ -82,6 +85,7 @@ class Test(unittest.TestCase):
 
     def test_get_updated_property_details_results(self):
         """
+        Unit test for the wrapper calling the GetUpdatedPropertyDetails API 
         """
 
         zillow_id = '48749425'
