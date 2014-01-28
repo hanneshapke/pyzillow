@@ -103,13 +103,16 @@ The following attributes are currently supported:
     - bedrooms
     - home_info
     - year_updated
-    - floors
+    - floor_material
+    - num_floors
     - basement
     - roof
     - view
+    - parking_type
     - heating_sources
     - heating_system
     - rooms
+    - home_description
     - neighborhood
     - school_district
 
@@ -135,6 +138,8 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
+Version 0.2.3 > new attributes added: home_description, num_floors, floor_material, parking_type
+
 Version 0.2.2 > Licence changed to MIT
 
 Version 0.2.1 > pip created and code refactured

@@ -2,10 +2,7 @@
 #
 # Hannes Hapke - Santiago, Chile - 2014
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# This program is free software: MIT license 
 
 """
 Distutils setup script for pyzillow.
@@ -30,7 +27,7 @@ setup(
     url='https://github.com/hanneshapke/pyzillow',
     download_url='https://github.com/hanneshapke/pyzillow/archive/master.zip',
     description='Python interface for Zillow\'s API. Currently supporting GetDeepSearchResults and GetUpdatedPropertyDetails API.',
-    long_description=open(os.path.join(os.path.dirname(__file__), 'README.txt'), 'r').read(),
+    long_description=open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r').read(),
     py_modules=['pyzillow', 'pyzillowerrors', '__version__'],
     provides=['pyzillow'],
     requires=['requests'],
@@ -41,7 +38,7 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Topic :: Internet',
         'Topic :: Internet :: WWW/HTTP',
     ],
