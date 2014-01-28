@@ -61,7 +61,7 @@ The following attributes are currently supported:
     - map_this_home_link
     - latitude
     - latitude
-    - coordinates
+    - coordinates (as GEOS point)
     - tax_year
     - tax_value
     - year_built
@@ -95,7 +95,7 @@ The following attributes are currently supported:
     - photo_gallery
     - latitude
     - latitude
-    - coordinates
+    - coordinates (as GEOS point)
     - year_built
     - property_size
     - home_size
@@ -138,6 +138,8 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
+Version 0.2.4 > coordinates provides as GEOS point
+
 Version 0.2.3 > new attributes added: home_description, num_floors, floor_material, parking_type
 
 Version 0.2.2 > Licence changed to MIT

@@ -5,6 +5,8 @@ from requests.exceptions import (ConnectionError, TooManyRedirects,
 
 from xml.etree import cElementTree as ElementTree  # for zillow API
 
+from django.contrib.gis.geos.error import GEOSException
+
 from pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
 from __version__ import VERSION
 
@@ -111,7 +113,11 @@ class ZillowResults(object):
         """
         Return a (latitude, longitude) coordinate pair of the current result
         """
-        return self.latitude, self.longitude
+        from django.contrib.gis.geos import fromstr
+        try:
+            return fromstr('POINT(%s %s)' %(self.latitude, self.longitude), srid=4326)
+        except GEOSException:
+            return None
 
     @property
     def area_unit(self):
@@ -198,6 +204,7 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'heating_sources':  'editedFacts/heatingSources', 
         'heating_system':   'editedFacts/heatingSystem', 
         'rooms':            'editedFacts/rooms', 
+        'appliances',       'editedFacts/appliances', 
         'neighborhood':     'neighborhood', 
         'school_district':  'schoolDistrict', 
         'home_description': 'homeDescription', 
