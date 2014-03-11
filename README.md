@@ -2,7 +2,7 @@
 pyzillow 0.3
 ==================
 
-By Hannes Hapke & Miguel Paolino
+By Hannes Hapke & Miguel Paolino for [renooble.com](http://www.renooble.com)
 
 20/01/2014
 
