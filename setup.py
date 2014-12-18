@@ -19,6 +19,13 @@ except ImportError:
 
 from __version__ import VERSION
 
+try:
+    import pypandoc
+    long_description = pypandoc.convert(os.path.join(os.path.dirname(__file__), 
+        'README.md'), 'rst')
+except (IOError, ImportError):
+    long_description = ''
+
 setup(
     name='pyzillow',
     version=VERSION,
@@ -26,8 +33,10 @@ setup(
     author_email='hannes@renooble.com',
     url='https://github.com/hanneshapke/pyzillow',
     download_url='https://github.com/hanneshapke/pyzillow/archive/master.zip',
-    description='Python interface for Zillow\'s API. Currently supporting GetDeepSearchResults and GetUpdatedPropertyDetails API.',
-    long_description=open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r').read(),
+    description='Python interface for Zillow\'s API. \
+            Currently supporting GetDeepSearchResults and GetUpdatedPropertyDetails API.',
+    # long_description=open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r').read(),
+    long_description = long_description, 
     py_modules=['pyzillow', 'pyzillowerrors', '__version__'],
     provides=['pyzillow'],
     requires=['requests'],

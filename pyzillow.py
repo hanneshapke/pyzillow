@@ -4,6 +4,7 @@ from requests.exceptions import (ConnectionError, TooManyRedirects,
                                 Timeout, HTTPError)
 
 from xml.etree import cElementTree as ElementTree  # for zillow API
+from xml.etree.ElementTree import ParseError
 
 from django.contrib.gis.geos.error import GEOSException
 
@@ -204,7 +205,8 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'heating_sources':  'editedFacts/heatingSources', 
         'heating_system':   'editedFacts/heatingSystem', 
         'rooms':            'editedFacts/rooms', 
-        'appliances',       'editedFacts/appliances', 
+        'num_rooms':        'editedFacts/numRooms', 
+        'appliances':       'editedFacts/appliances', 
         'neighborhood':     'neighborhood', 
         'school_district':  'schoolDistrict', 
         'home_description': 'homeDescription', 

@@ -1,0 +1,9 @@
+# People who have contribute to the development and patches.
+#
+# Names should be added to this file as:
+#     Name <email address> or <git repo url>
+
+Alvaro Feito <alvaro@renooble.com>
+Bryce Boe <bbzbryce@gmail.com>
+Hannes Hapke <hannes@renooble.com>
+Miguel paolino <miguel@renooble.com>

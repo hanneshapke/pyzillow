@@ -1,9 +1,8 @@
 ==================
 pyzillow 0.2.2
 ==================
-Hannes Hapke
-Miguel Paolino
-20/01/2014
+
+Please see CONTRIBUTORS.txt for contributing coders. Thank you all for your patches, pull requests and feature requests.
 
 
 README
@@ -138,6 +137,12 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
+Version 0.2.7 > Bug fix: Missing ParseError, numRooms now read from UpdatedProperty
+
+Version 0.2.6 > Bug fix
+
+Version 0.2.5 > Using markdown as README file for setup.py
+
 Version 0.2.4 > coordinates provides as GEOS point
 
 Version 0.2.3 > new attributes added: home_description, num_floors, floor_material, parking_type
