@@ -39,8 +39,8 @@ setup(
     long_description = long_description, 
     py_modules=['pyzillow', 'pyzillowerrors', '__version__'],
     provides=['pyzillow'],
-    requires=['requests'],
-    install_requires=['requests >= 2.2.0'],
+    requires=['django', 'requests'],
+    install_requires=['django >= 1.6.4', 'requests >= 2.2.0'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Financial and Insurance Industry',
