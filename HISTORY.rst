@@ -3,7 +3,12 @@
 History
 -------
 
-0.3.0 (2014-12-22)
+0.3.1 (2014-12-20)
+++++++++++++++++++
+
+* Added test cases and increased test coverage setup.
+
+0.3.0 (2014-12-19)
 ++++++++++++++++++
 
 * Refactored structure, travis CI compliance, coverage setup.
