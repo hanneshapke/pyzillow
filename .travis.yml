@@ -12,10 +12,12 @@ python:
 install: 
   - pip install -U -r requirements.txt
   - pip install -U -r test_requirements.txt
+  - pip install -e .
 
 # command to run tests, e.g. python setup.py test
 script:
   # - py.test test/test_pyzillow.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
-  - py.test --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
+  # - py.test --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
+  - py.test -vv --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
 after_success:
   - coveralls
