@@ -72,6 +72,12 @@ The following attributes are currently supported:
     - last_sold_date
     - last_sold_price_currency
     - last_sold_price
+    - zestimate_amount
+    - zestimate_last_updated
+    - zestimate_value_change
+    - zestimate_valuation_range_high
+    - zestimate_valuationRange_low
+    - zestimate_percentile
 
 
 Usage of the GetUpdatedPropertyDetails API

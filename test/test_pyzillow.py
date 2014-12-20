@@ -143,6 +143,13 @@ class TestPyzillow(object):
         assert lat - 0.01 <= 47.637933 <= lat + 0.01
         lng = float(result.longitude)
         assert lng - 0.01 <= -122.347938 <= lng + 0.01
+        assert result.zestimate_amount == '1434364'
+        # assert result.zestimate_currency == 'USD'
+        assert result.zestimate_last_updated == '12/18/2014'
+        assert result.zestimate_value_change == '18880'
+        assert result.zestimate_valuation_range_high == '1577800'
+        assert result.zestimate_valuationRange_low == '1247897'
+        assert result.zestimate_percentile == '0'
 
     def test_get_updated_property_details_results(self):
         """

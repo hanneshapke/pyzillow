@@ -164,6 +164,14 @@ class GetDeepSearchResults(ZillowResults):
         'last_sold_date': 'result/lastSoldDate',
         # 'last_sold_price_currency': 'result/lastSoldPrice',
         'last_sold_price': 'result/lastSoldPrice',
+        'zestimate_amount': 'result/zestimate/amount',
+        # 'zestimate_currency': 'result/zestimate/amount/',
+        'zestimate_last_updated': 'result/zestimate/last-updated',
+        'zestimate_value_change': 'result/zestimate/valueChange',
+        'zestimate_valuation_range_high':
+        'result/zestimate/valuationRange/high',
+        'zestimate_valuationRange_low': 'result/zestimate/valuationRange/low',
+        'zestimate_percentile': 'result/zestimate/percentile',
     }
 
     def __init__(self, data, *args, **kwargs):
@@ -230,8 +238,3 @@ class GetUpdatedPropertyDetails(ZillowResults):
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
                 print 'AttributeError with %s' % attr
-
-
-if __name__ == '__main__' and __package__ is None:
-    from os import sys, path
-    sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
