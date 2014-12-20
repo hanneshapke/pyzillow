@@ -3,6 +3,11 @@
 History
 -------
 
+0.4.0 (2014-12-20)
+++++++++++++++++++
+
+* Zestimate extracted from Zillow's GetDeepSearchResults API.
+
 0.3.1 (2014-12-20)
 ++++++++++++++++++
 
