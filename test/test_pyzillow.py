@@ -5,8 +5,10 @@
 """
 Tests for `pyzillow` module.
 """
+from pytest import raises
 from pyzillow.pyzillow import (
     ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails)
+from pyzillow.pyzillowerrors import ZillowError
 
 
 class TestPyzillow(object):
@@ -14,18 +16,95 @@ class TestPyzillow(object):
     @classmethod
     def setup_class(cls):
         cls.ZILLOW_API_KEY = 'X1-ZWz1b88d9eaq6j_1wtus'
+        cls.address = '2114 Bigelow Ave Seattle, WA'
+        cls.zipcode = '98109'
 
-    def test_zillow_api_results(self):
-        address = '2114 Bigelow Ave Seattle, WA'
-        zipcode = '98109'
-
+    def test_zillow_api_connect(self):
         # create response from zillow and check for error code '0'
         zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
         zillow_search_response = zillow_data.get_deep_search_results(
-            address, zipcode)
+            self.address, self.zipcode)
+        assert \
+            zillow_search_response.find('message').find('code').text == '0'
 
-        assert zillow_search_response.find('message').find('code').text == \
-            '0'
+    def test_zillow_error_invalid_ZWSID(self):
+        # This test checks the correct error message if no ZWSID is provided.
+        # Expected error code: 2
+        zillow_data = ZillowWrapper(None)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=self.address,
+            zipcode=self.zipcode)
+
+    def test_zillow_error_missing_address(self):
+        # This test checks the correct error message if no address is provided.
+        # Expected error code: 500
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=None,
+            zipcode=self.zipcode)
+
+    def test_zillow_error_missing_zipcode(self):
+        # This test checks the correct error message if no zipcode is provided.
+        # Expected error code: 501
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=self.address,
+            zipcode=None)
+
+    def test_zillow_error_no_property_match(self):
+        # This test checks the correct error message if no property is found.
+        # Expected error code: 508
+        # Address and zip code of an exisiting property, but not listed
+        address = '599 Pennsylvania Avenue Northwest, Washington, DC'
+        zipcode = '20001'
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=address,
+            zipcode=zipcode)
+
+    def test_zillow_error_match_zipcode_city(self):
+        # This test checks the correct error message if no zipcode is provided.
+        # Expected error code: 503
+        mismatch_zipcode = '97204'  # Portland, OR
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=self.address,
+            zipcode=mismatch_zipcode)
+
+    def test_zillow_error_invalid_zipcode(self):
+        # This test checks the correct error message if an
+        # invalid zipcode is provided.
+        # Expected error code: 503
+        invalid_zipcode = 'ABCDE'  # invalid zipcode
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=self.address,
+            zipcode=invalid_zipcode)
+
+    def test_zillow_error_no_coverage(self):
+        # This test checks the correct error message
+        # if no coverage is provided.
+        # Expected error code: 504
+        address = 'Calle 21 y O, Vedado, Plaza, Ciudad de la Habana, Cuba'
+        zipcode = '10400'  # Cuban address, I assume Zillow doesn't cover Cuba
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+        raises(
+            ZillowError,
+            zillow_data.get_deep_search_results,
+            address=address,
+            zipcode=zipcode)
 
     def test_deep_search_results(self):
         """

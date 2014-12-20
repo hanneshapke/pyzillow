@@ -77,14 +77,13 @@ class ZillowWrapper(object):
                 params['address'])
             raise ZillowFail
 
-        if not response.findall('response'):
-            print "Zillow returned no results for (%s)" % (
-                params['address'])
-            raise ZillowNoResults
-
         if response.findall('message/code')[0].text is not '0':
             raise ZillowError(int(response.findall('message/code')[0].text))
         else:
+            if not response.findall('response'):
+                print "Zillow returned no results for (%s)" % (
+                    params['address'])
+                raise ZillowNoResults
             return response
 
 
