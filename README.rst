@@ -11,6 +11,12 @@ PyZillow
 .. image:: https://pypip.in/d/pyzillow/badge.png
     :target: https://pypi.python.org/pypi/pyzillow
 
+.. image:: https://coveralls.io/repos/hanneshapke/pyzillow/badge.png
+  :target: https://coveralls.io/r/hanneshapke/pyzillow
+
+.. image:: https://readthedocs.org/projects/pyzillow/badge/?version=latest 
+  :target: https://readthedocs.org/projects/pyzillow
+
 
 Python API wrapper for Zillow's API
 
