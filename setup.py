@@ -1,56 +1,54 @@
 #!/usr/bin/env python
-#
-# Hannes Hapke - Santiago, Chile - 2014
-#
-# This program is free software: MIT license 
-
-"""
-Distutils setup script for pyzillow.
-
-"""
-
 
 import os
+import sys
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-from __version__ import VERSION
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert(os.path.join(os.path.dirname(__file__), 
-        'README.md'), 'rst')
-except (IOError, ImportError):
-    long_description = ''
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
+
+readme = open('README.rst').read()
+doclink = """
+Documentation
+-------------
+
+The full documentation is at http://pyzillow.rtfd.org."""
+history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyzillow',
-    version=VERSION,
+    version='0.3.0',
+    description='Python API wrapper for Zillow\'s API',
+    long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Hannes Hapke',
-    author_email='hannes@renooble.com',
+    author_email='hannes.hapke@gmail.com',
     url='https://github.com/hanneshapke/pyzillow',
-    download_url='https://github.com/hanneshapke/pyzillow/archive/master.zip',
-    description='Python interface for Zillow\'s API. \
-            Currently supporting GetDeepSearchResults and GetUpdatedPropertyDetails API.',
-    # long_description=open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r').read(),
-    long_description = long_description, 
-    py_modules=['pyzillow', 'pyzillowerrors', '__version__'],
-    provides=['pyzillow'],
-    requires=['django', 'requests'],
-    install_requires=['django >= 1.6.4', 'requests >= 2.2.0'],
-    classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Financial and Insurance Industry',
-        'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
-        'License :: OSI Approved :: MIT License',
-        'Topic :: Internet',
-        'Topic :: Internet :: WWW/HTTP',
+    packages=[
+        'pyzillow',
     ],
-    keywords='zillow real estate rental xml api address zipcode',
+    package_dir={'pyzillow': 'pyzillow'},
+    include_package_data=True,
+    install_requires=[
+    ],
     license='MIT',
+    zip_safe=False,
+    keywords='pyzillow',
+    classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        # 'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        # 'Programming Language :: Python :: 3',
+        # 'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: Implementation :: PyPy',
+    ],
 )

@@ -1,30 +1,23 @@
-==================
-pyzillow 0.2.2
-==================
+=============================
+PyZillow
+=============================
 
-Please see CONTRIBUTORS.txt for contributing coders. Thank you all for your patches, pull requests and feature requests.
+.. image:: https://badge.fury.io/py/pyzillow.png
+    :target: http://badge.fury.io/py/pyzillow
+
+.. image:: https://travis-ci.org/hanneshapke/pyzillow.png?branch=master
+    :target: https://travis-ci.org/hanneshapke/pyzillow
+
+.. image:: https://pypip.in/d/pyzillow/badge.png
+    :target: https://pypi.python.org/pypi/pyzillow
 
 
-README
-------
-This is a Python wrapper for Zillow's API.
+Python API wrapper for Zillow's API
 
 Currrently it is supporting the GetDeepSearchResults and GetUpdatedPropertyDetails API. 
 
 It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into
 real estate data based on the Zillow database.
-
-License
-------
-MIT
-
-Dependencies
-------------
-It has dependency on the xml.etree module, included with Python versions 2.7 and later.
-requests library is also needed and will be installed by setuptools.
-
-It is developed on Python 2.7 but should work on earlier versions. Not tested if it is also compatible with Python 3. Sorry.
-
 
 Installation
 ------------
@@ -130,30 +123,6 @@ Contact Information
 -------------------
 Author: Hannes Hapke (renooble)
 Twitter: @hanneshapke
-Internet: https://github.com/hanneshapke/ 
+Internet: https://hanneshapke.github.io/ 
 
 For comments, issues, requests, please contact via Github at the above website
-
-
-Changelog
----------
-Version 0.2.7 > Bug fix: Missing ParseError, numRooms now read from UpdatedProperty
-
-Version 0.2.6 > Bug fix
-
-Version 0.2.5 > Using markdown as README file for setup.py
-
-Version 0.2.4 > coordinates provides as GEOS point
-
-Version 0.2.3 > new attributes added: home_description, num_floors, floor_material, parking_type
-
-Version 0.2.2 > Licence changed to MIT
-
-Version 0.2.1 > pip created and code refactured
-
-Version 0.2   > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
-
-Version 0.1   > Project created
-
-
-

@@ -1,0 +1,21 @@
+# Config file for automatic testing at travis-ci.org
+
+language: python
+
+python:
+  # - "3.3"
+  - "2.7"
+  - "2.6"
+  - "pypy"
+
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install: 
+  - pip install -U -r requirements.txt
+  - pip install -U -r test_requirements.txt
+
+# command to run tests, e.g. python setup.py test
+script:
+  # - py.test test/test_pyzillow.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
+  - py.test --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
+after_success:
+  - coveralls

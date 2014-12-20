@@ -3,11 +3,14 @@ class ZillowError(Exception):
     Error messages copied from Zillow\'s API documentation
     http://www.zillow.com/howto/api/GetDeepSearchResults.htm
     """
-    code = dict([ 
-        (0, 'Request successfully processed'), 
-        (1, 'Service error-there was a server-side error while processing the request. \
-            Check to see if your url is properly formed: delimiters, character cases, etc.'),
-        (2, 'The specified ZWSID parameter was invalid or not specified in the request.\
+    code = dict([
+        (0, 'Request successfully processed'),
+        (1, 'Service error-there was a server-side error \
+            while processing the request. \
+            Check to see if your url is properly formed: delimiters, \
+            character cases, etc.'),
+        (2, 'The specified ZWSID parameter was invalid or \
+            not specified in the request.\
             Check if you have provided a ZWSID in your API call. \
             If yes, check if the ZWSID is keyed in correctly. \
             If it still doesn\'t work, contact Zillow to get help on fixing \
@@ -41,21 +44,22 @@ class ZillowError(Exception):
             busy or unavailable. Try again later.'),
         (506, 'Address string too long If address is valid, try using \
             abbreviations.'),
-        (507, 'No exact match found. Verify that the given address is correct.'),
-        ])
+        (507, 'No exact match found. \
+            Verify that the given address is correct.'),
+    ])
 
     def __init__(self, status, url=None, response=None):
         """
 
         """
-        Exception.__init__(self, status)        # Exception is an old-school class
+        Exception.__init__(self, status)  # Exception is an old-school class
         self.status = status
         self.message = self.code[int(status)]
         self.url = url
         self.response = response
 
     def __str__(self):
-        return repr(self.message) 
+        return repr(self.message)
 
     def __unicode__(self):
         return unicode(self.__str__())
