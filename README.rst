@@ -14,6 +14,8 @@ PyZillow
 
 Python API wrapper for Zillow's API
 
+Documentation available here: http://pyzillow.readthedocs.org/en/latest/
+
 Currrently it is supporting the GetDeepSearchResults and GetUpdatedPropertyDetails API. 
 
 It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into

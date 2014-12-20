@@ -18,6 +18,7 @@ install:
 script:
   # - py.test test/test_pyzillow.py --doctest-modules --pep8 coveralls -v --cov coveralls --cov-report term-missing
   # - py.test --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
-  - py.test -vv --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
+  # - py.test -vv --doctest-modules --flake test/test_pyzillow.py -v --cov coveralls --cov-report term-missing
+  - py.test --flake  --cov-report term --cov pyzillow test/
 after_success:
   - coveralls
