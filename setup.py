@@ -23,7 +23,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyzillow',
-    version='0.3.0',
+    version='0.4.0',
     description='Python API wrapper for Zillow\'s API',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Hannes Hapke',
@@ -40,7 +40,7 @@ setup(
     zip_safe=False,
     keywords='pyzillow',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
