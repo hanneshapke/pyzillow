@@ -2,31 +2,23 @@
 pyzillow 0.3
 ==================
 
-By Hannes Hapke & Miguel Paolino
+By Hannes Hapke & Miguel Paolino for [renooble.com](http://www.renooble.com)
 
-10/09/2015
-.. image:: https://travis-ci.org/hanneshapke/pyzillow.png?branch=master
-    :target: https://travis-ci.org/hanneshapke/pyzillow
+20/01/2014
 
-.. image:: https://pypip.in/d/pyzillow/badge.png
-    :target: https://pypi.python.org/pypi/pyzillow
 
-.. image:: https://coveralls.io/repos/hanneshapke/pyzillow/badge.png
-  :target: https://coveralls.io/r/hanneshapke/pyzillow
-=======
 README
 ------
 This is a Python wrapper for [Zillow's API](http://www.zillow.com/howto/api/APIOverview.htm).
 
-Currrently it supports the GetDeepSearchResults and GetUpdatedPropertyDetails APIs.
+Currrently it supports the GetDeepSearchResults and GetUpdatedPropertyDetails APIs. 
 
 It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
-Documentation available here: http://pyzillow.readthedocs.org/en/latest/
-.. image:: https://readthedocs.org/projects/pyzillow/badge/?version=latest
-  :target: https://readthedocs.org/projects/pyzillow
+License
+------
+BSD
 
-=======
 Dependencies
 ------------
 It requires the xml.etree module, included with Python versions 2.7 and later.
@@ -34,10 +26,6 @@ The [requests](http://docs.python-requests.org/en/latest/index.html) library is 
 
 It is developed on Python 2.7 but should work on earlier versions. We have not tested it with Python 3. Sorry.
 
-Currently it is supporting the GetDeepSearchResults and GetUpdatedPropertyDetails API.
-
-It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into
-real estate data based on the Zillow database.
 
 Installation
 ------------
@@ -60,7 +48,7 @@ Usage of the GetDeepSearchResults API
     ...
     zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
     deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
-    result = GetDeepSearchResults(deep_search_response)
+    result = GetDeepSearchResults(deep_search_response) 
     ...
     result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
@@ -73,7 +61,7 @@ The following attributes are currently supported:
     - map_this_home_link
     - latitude
     - latitude
-    - coordinates (as GEOS point)
+    - coordinates
     - tax_year
     - tax_value
     - year_built
@@ -84,12 +72,6 @@ The following attributes are currently supported:
     - last_sold_date
     - last_sold_price_currency
     - last_sold_price
-    - zestimate_amount
-    - zestimate_last_updated
-    - zestimate_value_change
-    - zestimate_valuation_range_high
-    - zestimate_valuationRange_low
-    - zestimate_percentile
 
 
 Usage of the GetUpdatedPropertyDetails API
@@ -101,7 +83,7 @@ Usage of the GetUpdatedPropertyDetails API
     ...
     zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
     updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
-    result = GetUpdatedPropertyDetails(updated_property_details_response)
+    result = GetUpdatedPropertyDetails(updated_property_details_response) 
     ...
     result.rooms # number of rooms of the home
 
@@ -113,7 +95,7 @@ The following attributes are currently supported:
     - photo_gallery
     - latitude
     - latitude
-    - coordinates (as GEOS point)
+    - coordinates
     - year_built
     - property_size
     - home_size
@@ -121,16 +103,13 @@ The following attributes are currently supported:
     - bedrooms
     - home_info
     - year_updated
-    - floor_material
-    - num_floors
+    - floors
     - basement
     - roof
     - view
-    - parking_type
     - heating_sources
     - heating_system
     - rooms
-    - home_description
     - neighborhood
     - school_district
 
@@ -147,20 +126,20 @@ The following attributes are not provided by the API:
 
 Contact Information
 -------------------
-Author: Hannes Hapke (renooble)
+Author: Hannes Hapke
 Twitter: @hanneshapke
-
-Internet: https://github.com/hanneshapke/
+Internet: https://github.com/hanneshapke/ 
 
 For comments, issues, requests, please contact via Github at the above website
 
 
 Changelog
 ---------
-Version 0.3.1 > Merged PR
-
 Version 0.3 > pip created and code refactored
 
 Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
 
 Version 0.1 > Project created
+
+
+
