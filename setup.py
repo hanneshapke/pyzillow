@@ -11,6 +11,8 @@ Distutils setup script for pyzillow.
 import os
 import sys
 
+from __version__ import VERSION
+
 try:
     from setuptools import setup
 except ImportError:
@@ -31,7 +33,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyzillow',
-    version='0.4.0',
+    version=VERSION,
     description='Python API wrapper for Zillow\'s API',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Hannes Hapke',
