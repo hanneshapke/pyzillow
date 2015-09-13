@@ -54,7 +54,7 @@ or download the source from https://github.com/hanneshapke/pyzillow and install
 Usage of the GetDeepSearchResults API
 -------------------------------------
 
-    from pyzillow import ZillowWrapper, GetDeepSearchResults
+    from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults
     ...
     address = 'YOUR ADDRESS'
     zipcode = 'YOUR ZIPCODE'
@@ -96,7 +96,7 @@ The following attributes are currently supported:
 Usage of the GetUpdatedPropertyDetails API
 ------------------------------------------
 
-    from pyzillow import ZillowWrapper, GetUpdatedPropertyDetails
+    from pyzillow.pyzillow import ZillowWrapper, GetUpdatedPropertyDetails
     ...
     zillow_id = 'YOUR ZILLOW ID'
     ...
