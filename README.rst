@@ -157,10 +157,9 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
-Version 0.3.1 > Merged PR
-
-Version 0.3 > pip created and code refactored
-
-Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
-
-Version 0.1 > Project created
+- Version 0.5 > Removed django.contrib.gis.geos dependency, remove Django from the pip requirements, moved requirements to separate folder
+- Version 0.4 > DepreciationWarning: def coordinates(self) will not be supported in version 0.5
+- Version 0.3.1 > Merged PR
+- Version 0.3 > pip created and code refactored
+- Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
+- Version 0.1 > Project created
