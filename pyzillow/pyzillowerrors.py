@@ -1,3 +1,5 @@
+import sys
+
 class ZillowError(Exception):
     """
     Error messages copied from Zillow\'s API documentation
@@ -64,11 +66,15 @@ class ZillowError(Exception):
         self.url = url
         self.response = response
 
-    def __str__(self):
-        return repr(self.message)
-
     def __unicode__(self):
-        return unicode(self.__str__())
+        return self.message
+
+    if sys.version_info[0] >= 3:  # Python 3
+        def __str__(self):
+            return self.__unicode__()
+    else:  # Python 2
+        def __str__(self):
+            return self.__unicode__().encode('utf8')
 
 
 class ZillowFail(Exception):

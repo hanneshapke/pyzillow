@@ -67,16 +67,20 @@ class ZillowWrapper(object):
         try:
             response = ElementTree.fromstring(request.text)
         except ElementTree.ParseError:
-            print "Zillow response is not a valid XML (%s)" % (
+            print (
+                "Zillow response is not a valid XML (%s)" % (
                 params['address'])
+            )
             raise ZillowFail
 
         if response.findall('message/code')[0].text is not '0':
             raise ZillowError(int(response.findall('message/code')[0].text))
         else:
             if not response.findall('response'):
-                print "Zillow returned no results for (%s)" % (
+                print (
+                    "Zillow returned no results for (%s)" % (
                     params['address'])
+                )
                 raise ZillowNoResults
             return response
 
@@ -160,7 +164,7 @@ class GetDeepSearchResults(ZillowResults):
             try:
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
-                print 'AttributeError with %s' % attr
+                print ('AttributeError with %s' % attr)
 
 
 class GetUpdatedPropertyDetails(ZillowResults):
@@ -213,4 +217,4 @@ class GetUpdatedPropertyDetails(ZillowResults):
             try:
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
-                print 'AttributeError with %s' % attr
+                print ('AttributeError with %s' % attr)
