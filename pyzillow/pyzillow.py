@@ -4,7 +4,7 @@ import requests
 from xml.etree import cElementTree as ElementTree  # for zillow API
 
 from .pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
-from __version__ import VERSION
+import pyzillow
 
 
 class ZillowWrapper(object):
@@ -51,7 +51,11 @@ class ZillowWrapper(object):
                 url=url,
                 params=params,
                 headers={
-                    'User-Agent': 'pyzillow/' + VERSION + ' (Python)'
+                    'User-Agent': ''.join([
+                        'pyzillow/',
+                        pyzillow.__version__,
+                        ' (Python)'
+                    ])
                 })
         except (
             requests.exceptions.ConnectionError,
@@ -69,7 +73,8 @@ class ZillowWrapper(object):
         except ElementTree.ParseError:
             print (
                 "Zillow response is not a valid XML (%s)" % (
-                params['address'])
+                    params['address']
+                )
             )
             raise ZillowFail
 
@@ -79,7 +84,8 @@ class ZillowWrapper(object):
             if not response.findall('response'):
                 print (
                     "Zillow returned no results for (%s)" % (
-                    params['address'])
+                        params['address']
+                    )
                 )
                 raise ZillowNoResults
             return response

@@ -135,7 +135,7 @@ For comments, issues, requests, please contact via Github at the above website
 
 Changelog
 ---------
-- Version 0.5.3 > Updated __init__.py
+- Version 0.5.3/4 > Updated __init__.py
 - Version 0.5.2 > Updated setup.py
 - Version 0.5.1 > Python 3.4 support
 - Version 0.5 > Removed django.contrib.gis.geos dependency, remove Django from the pip requirements, moved requirements to separate folder, updated tests, mocked tests

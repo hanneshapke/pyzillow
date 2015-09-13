@@ -31,7 +31,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyzillow',
-    version='0.5.3',
+    version='0.5.4',
     description='Python API wrapper for Zillow\'s API',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
     author='Hannes Hapke',
