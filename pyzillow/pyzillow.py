@@ -1,11 +1,7 @@
 import sys
-import warnings
 import requests
 
 from xml.etree import cElementTree as ElementTree  # for zillow API
-
-# from django.contrib.gis.geos.error import GEOSException
-from django.contrib.gis.geos import fromstr, error
 
 from pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
 from __version__ import VERSION
@@ -46,7 +42,6 @@ class ZillowWrapper(object):
         }
         return self.get_data(url, params)
 
-    # @omnimethod
     def get_data(self, url, params):
         """
         """
@@ -58,7 +53,6 @@ class ZillowWrapper(object):
                 headers={
                     'User-Agent': 'pyzillow/' + VERSION + ' (Python)'
                 })
-            print request.url
         except (
             requests.exceptions.ConnectionError,
             requests.exceptions.TooManyRedirects,
@@ -113,21 +107,6 @@ class ZillowResults(object):
             return self.__unicode__().encode('utf8')
 
     @property
-    def coordinates(self):
-        """
-        Return a (latitude, longitude) coordinate pair of the current result
-        """
-        warnings.warn(
-            'The coordinate method will be depreciated in version 0.4 \
-            to remove Django from the dependencies.',
-            DeprecationWarning)
-        try:
-            return fromstr('POINT(%s %s)' % (
-                self.latitude, self.longitude), srid=4326)
-        except error.GEOSException:
-            return None
-
-    @property
     def area_unit(self):
         """
         lotSizeSqFt
@@ -162,10 +141,8 @@ class GetDeepSearchResults(ZillowResults):
         'bathrooms': 'result/bathrooms',
         'bedrooms': 'result/bedrooms',
         'last_sold_date': 'result/lastSoldDate',
-        # 'last_sold_price_currency': 'result/lastSoldPrice',
         'last_sold_price': 'result/lastSoldPrice',
         'zestimate_amount': 'result/zestimate/amount',
-        # 'zestimate_currency': 'result/zestimate/amount/',
         'zestimate_last_updated': 'result/zestimate/last-updated',
         'zestimate_value_change': 'result/zestimate/valueChange',
         'zestimate_valuation_range_high':
@@ -206,7 +183,6 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'bathrooms': 'editedFacts/bathrooms',
         'bedrooms': 'editedFacts/bedrooms',
         'last_sold_date': '',
-        # 'last_sold_price_currency': '',
         'last_sold_price': '',
         # new attributes in GetUpdatedPropertyDetails
         'photo_gallery': 'links/photoGallery',
