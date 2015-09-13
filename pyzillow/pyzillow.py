@@ -4,7 +4,7 @@ import requests
 from xml.etree import cElementTree as ElementTree  # for zillow API
 
 from .pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
-import pyzillow
+from . import __version__
 
 
 class ZillowWrapper(object):
@@ -53,7 +53,7 @@ class ZillowWrapper(object):
                 headers={
                     'User-Agent': ''.join([
                         'pyzillow/',
-                        pyzillow.__version__,
+                        __version__,
                         ' (Python)'
                     ])
                 })
