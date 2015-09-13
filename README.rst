@@ -13,6 +13,7 @@ By Hannes Hapke & Miguel Paolino
 
 .. image:: https://coveralls.io/repos/hanneshapke/pyzillow/badge.png
   :target: https://coveralls.io/r/hanneshapke/pyzillow
+
 =======
 README
 ------
