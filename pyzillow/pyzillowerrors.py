@@ -1,5 +1,6 @@
 import sys
 
+
 class ZillowError(Exception):
     """
     Error messages copied from Zillow\'s API documentation

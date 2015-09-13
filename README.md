@@ -11,13 +11,13 @@ README
 ------
 This is a Python wrapper for [Zillow's API](http://www.zillow.com/howto/api/APIOverview.htm).
 
-Currrently it supports the GetDeepSearchResults and GetUpdatedPropertyDetails APIs. 
+Currrently it supports the GetDeepSearchResults and GetUpdatedPropertyDetails APIs.
 
 It allows you to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
 License
 ------
-BSD
+MIT
 
 Dependencies
 ------------
@@ -48,7 +48,7 @@ Usage of the GetDeepSearchResults API
     ...
     zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
     deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
-    result = GetDeepSearchResults(deep_search_response) 
+    result = GetDeepSearchResults(deep_search_response)
     ...
     result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
 
@@ -83,7 +83,7 @@ Usage of the GetUpdatedPropertyDetails API
     ...
     zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
     updated_property_details_response = zillow_data.get_updated_property_details(zillow_id)
-    result = GetUpdatedPropertyDetails(updated_property_details_response) 
+    result = GetUpdatedPropertyDetails(updated_property_details_response)
     ...
     result.rooms # number of rooms of the home
 
@@ -128,18 +128,20 @@ Contact Information
 -------------------
 Author: Hannes Hapke
 Twitter: @hanneshapke
-Internet: https://github.com/hanneshapke/ 
+Internet: https://github.com/hanneshapke/
 
 For comments, issues, requests, please contact via Github at the above website
 
 
 Changelog
 ---------
-Version 0.3 > pip created and code refactored
-
-Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
-
-Version 0.1 > Project created
+- Version 0.5.1 > Python 3.4 support
+- Version 0.5 > Removed django.contrib.gis.geos dependency, remove Django from the pip requirements, moved requirements to separate folder, updated tests, mocked tests
+- Version 0.4 > DepreciationWarning: def coordinates(self) will not be supported in version 0.5
+- Version 0.3.1 > Merged PR
+- Version 0.3 > pip created and code refactored
+- Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
+- Version 0.1 > Project created
 
 
 

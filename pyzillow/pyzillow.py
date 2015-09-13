@@ -3,7 +3,7 @@ import requests
 
 from xml.etree import cElementTree as ElementTree  # for zillow API
 
-from pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
+from .pyzillowerrors import ZillowError, ZillowFail, ZillowNoResults
 from __version__ import VERSION
 
 
