@@ -60,7 +60,8 @@ Usage of the GetDeepSearchResults API
     zipcode = 'YOUR ZIPCODE'
     ...
     zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
-    deep_search_response = zillow_data.get_deep_search_results(address, zipcode)
+    deep_search_response = zillow_data.get_deep_search_results(
+        address, zipcode, rentzestimate)
     result = GetDeepSearchResults(deep_search_response)
     ...
     result.zillow_id # zillow id, needed for the GetUpdatedPropertyDetails
@@ -89,9 +90,17 @@ The following attributes are currently supported:
     - zestimate_last_updated
     - zestimate_value_change
     - zestimate_valuation_range_high
-    - zestimate_valuationRange_low
+    - zestimate_valuation_range_low
     - zestimate_percentile
 
+If rentzestimate=True the following additional attributes are supported:
+
+    - rentzestimate_amount
+    - rentzestimate_last_updated
+    - rentzestimate_value_change
+    - rentzestimate_valuation_range_high
+    - rentzestimate_valuation_range_low
+    
 
 Usage of the GetUpdatedPropertyDetails API
 ------------------------------------------

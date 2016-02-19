@@ -17,7 +17,7 @@ class ZillowWrapper(object):
         """
         self.api_key = api_key
 
-    def get_deep_search_results(self, address, zipcode):
+    def get_deep_search_results(self, address, zipcode, rentzestimate=False):
         """
         GetDeepSearchResults API
         """
@@ -26,6 +26,7 @@ class ZillowWrapper(object):
         params = {
             'address': address,
             'citystatezip': zipcode,
+            'rentzestimate': str(rentzestimate).lower(),
             'zws-id': self.api_key
         }
         return self.get_data(url, params)
@@ -157,8 +158,15 @@ class GetDeepSearchResults(ZillowResults):
         'zestimate_value_change': 'result/zestimate/valueChange',
         'zestimate_valuation_range_high':
         'result/zestimate/valuationRange/high',
-        'zestimate_valuationRange_low': 'result/zestimate/valuationRange/low',
+        'zestimate_valuation_range_low': 'result/zestimate/valuationRange/low',
         'zestimate_percentile': 'result/zestimate/percentile',
+        'rentzestimate_amount': 'result/rentzestimate/amount',
+        'rentzestimate_last_updated': 'result/rentzestimate/last-updated',
+        'rentzestimate_value_change': 'result/rentzestimate/valueChange',
+        'rentzestimate_valuation_range_high':
+        'result/rentzestimate/valuationRange/high',
+        'rentzestimate_valuation_range_low': 
+        'result/rentzestimate/valuationRange/low',
     }
 
     def __init__(self, data, *args, **kwargs):
