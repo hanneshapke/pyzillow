@@ -65,7 +65,7 @@ class TestPyzillow(object):
         # This test checks the correct error message if no property is found.
         # Expected error code: 508
         # Address and zip code of an exisiting property, but not listed
-        address = '599 Pennsylvania Avenue Northwest, Washington, DC'
+        address = 'not a valid address'
         zipcode = '20001'
         zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
         raises(
