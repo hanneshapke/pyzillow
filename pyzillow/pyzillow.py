@@ -131,7 +131,7 @@ class ZillowResults(object):
         """
         return self.data.find(
             self.attribute_mapping['last_sold_price']).attrib["currency"]
-
+            
 
 class GetDeepSearchResults(ZillowResults):
     """
@@ -180,7 +180,38 @@ class GetDeepSearchResults(ZillowResults):
             except AttributeError:
                 print ('AttributeError with %s' % attr)
 
+    @property
+    def region_name(self):
+        """
+        region name
+        """
+        try:
+            return self.data.find(
+                'result/localRealEstate/region').attrib["name"]  
+        except AttributeError:
+            return None    
+    
+    @property
+    def region_id(self):
+        """
+        region id
+        """
+        try:
+            return self.data.find('result/localRealEstate/region').attrib["id"]  
+        except AttributeError:
+            return None       
 
+    @property
+    def region_type(self):
+        """
+        region type
+        """
+        try:
+            return self.data.find(
+                 'result/localRealEstate/region').attrib["type"]  
+        except AttributeError:
+            return None  
+        
 class GetUpdatedPropertyDetails(ZillowResults):
     """
     """
@@ -219,7 +250,15 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'appliances': 'editedFacts/appliances',
         'neighborhood': 'neighborhood',
         'school_district': 'schoolDistrict',
+        'elementary_school': 'elementarySchool',
+        'middle_school': 'middleSchool',
+        'school_district': 'schoolDistrict',
         'home_description': 'homeDescription',
+        'posting_status': 'posting/status',
+        'posting_type': 'posting/type',
+        'agent_name': 'posting/agentName',
+        'agent_profile_url': 'posting/agentProfileUrl',
+        'brokerage': 'posting/brokerage',
     }
 
     def __init__(self, data, *args, **kwargs):
