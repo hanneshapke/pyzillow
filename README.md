@@ -60,7 +60,7 @@ The following attributes are currently supported:
     - graph_data_link
     - map_this_home_link
     - latitude
-    - latitude
+    - longitude
     - coordinates
     - tax_year
     - tax_value
@@ -94,7 +94,7 @@ The following attributes are currently supported:
     - home_detail_link
     - photo_gallery
     - latitude
-    - latitude
+    - longitude
     - coordinates
     - year_built
     - property_size
