@@ -212,6 +212,12 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'neighborhood': 'neighborhood',
         'school_district': 'schoolDistrict',
         'home_description': 'homeDescription',
+        'price': 'price',
+        'posting_status': 'posting/status',
+        'posting_agent': 'posting/agentName',
+        'posting_type': 'posting/type',
+        'posting_mls': 'posting/mls',
+        'posting_last_update': 'posting/lastUpdatedDate',
     }
 
     def __init__(self, data, *args, **kwargs):
