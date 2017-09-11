@@ -61,6 +61,10 @@ The following attributes are currently supported:
     - map_this_home_link
     - latitude
     - latitude
+    - street
+    - city
+    - state
+    - zipcode
     - coordinates
     - tax_year
     - tax_value
@@ -72,6 +76,7 @@ The following attributes are currently supported:
     - last_sold_date
     - last_sold_price_currency
     - last_sold_price
+    - price
 
 
 Usage of the GetUpdatedPropertyDetails API
@@ -95,6 +100,10 @@ The following attributes are currently supported:
     - photo_gallery
     - latitude
     - latitude
+    - street
+    - city
+    - state
+    - zipcode
     - coordinates
     - year_built
     - property_size
@@ -112,6 +121,7 @@ The following attributes are currently supported:
     - rooms
     - neighborhood
     - school_district
+    - price
 
 The following attributes are not provided by the API:
 
