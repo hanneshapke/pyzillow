@@ -74,6 +74,10 @@ The following attributes are currently supported:
     - map_this_home_link
     - latitude
     - latitude
+    - street
+    - city
+    - state
+    - zipcode
     - coordinates (as GEOS point)
     - tax_year
     - tax_value
@@ -91,6 +95,7 @@ The following attributes are currently supported:
     - zestimate_valuation_range_high
     - zestimate_valuationRange_low
     - zestimate_percentile
+    - price
 
 
 Usage of the GetUpdatedPropertyDetails API
@@ -114,6 +119,10 @@ The following attributes are currently supported:
     - photo_gallery
     - latitude
     - latitude
+    - street
+    - city
+    - state
+    - zipcode
     - coordinates (as GEOS point)
     - year_built
     - property_size
@@ -134,6 +143,7 @@ The following attributes are currently supported:
     - home_description
     - neighborhood
     - school_district
+    - price
 
 The following attributes are not provided by the API:
 
