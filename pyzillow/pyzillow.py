@@ -141,6 +141,10 @@ class GetDeepSearchResults(ZillowResults):
         'home_detail_link': 'result/links/homedetails',
         'graph_data_link': 'result/links/graphsanddata',
         'map_this_home_link': 'result/links/mapthishome',
+        'street': 'result/address/street',
+        'city': 'result/address/city',
+        'state': 'result/address/state',
+        'zipcode': 'result/address/zipcode',
         'latitude': 'result/address/latitude',
         'longitude': 'result/address/longitude',
         'tax_year': 'result/taxAssessmentYear',
@@ -159,6 +163,7 @@ class GetDeepSearchResults(ZillowResults):
         'result/zestimate/valuationRange/high',
         'zestimate_valuationRange_low': 'result/zestimate/valuationRange/low',
         'zestimate_percentile': 'result/zestimate/percentile',
+        'price': 'result/price',
     }
 
     def __init__(self, data, *args, **kwargs):
@@ -185,6 +190,10 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'map_this_home_link': '',
         'latitude': 'address/latitude',
         'longitude': 'address/longitude',
+        'street': 'result/address/street',
+        'city': 'result/address/city',
+        'state': 'result/address/state',
+        'zipcode': 'result/address/zipcode',
         'tax_year': '',
         'tax_value': '',
         'year_built': 'editedFacts/yearBuilt',
@@ -194,6 +203,7 @@ class GetUpdatedPropertyDetails(ZillowResults):
         'bedrooms': 'editedFacts/bedrooms',
         'last_sold_date': '',
         'last_sold_price': '',
+        'price': 'result/price',
         # new attributes in GetUpdatedPropertyDetails
         'photo_gallery': 'links/photoGallery',
         'home_info': 'links/homeInfo',
