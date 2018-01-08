@@ -4,4 +4,4 @@ coverage==4.4.2
 pytest==3.3.2
 pytest-cov==2.5.1
 pytest-flakes==2.0.0
-responses==0.4.0
+responses==0.8.1
