@@ -61,9 +61,9 @@ class ZillowError(Exception):
         """
         Exception.__init__(self, status)  # Exception is an old-school class
         self.status = status
-        self.message = {
-            'code': status,
-            'text': self.code[int(status)]}
+        self.message = 'Status {code}: {text}'.format(
+            code=status,
+            text=self.code.get(int(status), "Unknown status."))
         self.url = url
         self.response = response
 
