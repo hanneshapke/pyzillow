@@ -5,7 +5,9 @@
 Tests for `pyzillow` module.
 """
 
+import os
 import responses
+
 from pytest import raises
 from pyzillow.pyzillow import (
     ZillowWrapper,
@@ -19,7 +21,7 @@ class TestPyzillow(object):
 
     @classmethod
     def setup_class(cls):
-        cls.ZILLOW_API_KEY = 'YOUR_API_KEY'
+        cls.ZILLOW_API_KEY = os.environ("ZILLOW_API_KEY")
         cls.address = '2114 Bigelow Ave Seattle, WA'
         cls.zipcode = '98109'
 
