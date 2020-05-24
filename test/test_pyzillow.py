@@ -19,7 +19,7 @@ class TestPyzillow(object):
 
     @classmethod
     def setup_class(cls):
-        cls.ZILLOW_API_KEY = 'X1-ZWz1b88d9eaq6j_1wtus'
+        cls.ZILLOW_API_KEY = 'YOUR_API_KEY'
         cls.address = '2114 Bigelow Ave Seattle, WA'
         cls.zipcode = '98109'
 
