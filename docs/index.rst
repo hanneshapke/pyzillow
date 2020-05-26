@@ -13,6 +13,7 @@ Contents:
 
    installation
    usage
+   pyzillow
    contributing
    authors
    history
