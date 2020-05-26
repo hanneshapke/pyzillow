@@ -3,7 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. include:: ../README.rst
+pyzillow
+========
+
+A python library to access the Zillow APIs
+------------------------------------------
+
+pyzillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm).
+
+Currrently, pyzillow supports the GetDeepSearchResults and GetUpdatedPropertyDetails API endpoints.
+
+With pyzillow, you are able to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
 Contents:
 =========
@@ -12,7 +22,7 @@ Contents:
    :maxdepth: 2
 
    installation
-   usage
+   getting_started
    pyzillow
    contributing
    authors
