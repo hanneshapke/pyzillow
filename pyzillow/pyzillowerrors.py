@@ -2,9 +2,8 @@ import sys
 
 
 class ZillowError(Exception):
-    """
-    Error messages copied from Zillow\'s API documentation
-    http://www.zillow.com/howto/api/GetDeepSearchResults.htm
+    """A ZillowError exception is raised if the API endpoint responded 
+    with an error code (http://www.zillow.com/howto/api/GetDeepSearchResults.htm).
     """
     code = dict([
         (0, 'Request successfully processed'),
@@ -56,8 +55,7 @@ class ZillowError(Exception):
     ])
 
     def __init__(self, status, url=None, response=None):
-        """
-
+        """Constructor method
         """
         Exception.__init__(self, status)  # Exception is an old-school class
         self.status = status
@@ -79,12 +77,16 @@ class ZillowError(Exception):
 
 
 class ZillowFail(Exception):
+    """A ZillowFail exception is raised if the API endpoint could not be reached or the request did not return valid XML.
+    """
 
     def __init__(self):
         Exception.__init__(self)
 
 
 class ZillowNoResults(Exception):
+    """A ZillowNoResults exception is raised if the request did not return any results.
+    """
 
     def __init__(self):
         Exception.__init__(self)
