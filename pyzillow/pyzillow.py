@@ -17,9 +17,9 @@ class ZillowWrapper(object):
 
         1. The GetDeepSearchResults API endpoint (:class:`pyzillow.pyzillow.GetDeepSearchResults`) which requires the following arguments: 
             
-            * A street address (eg ``'2114 Bigelow Ave'``)
-            * A zip code or city+state combination (eg ``'98109'`` or ``'Seattle, WA'``)
-            * Optional: Enabeling or disabeling Zillow Rentzestimate information in API results (``True``/``False``)
+            * A street address (e.g. ``'2114 Bigelow Ave'``)
+            * A zip code or city+state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
+            * Optional: Enabling or disabling Zillow Rentzestimate information in API results (``True``/``False``)
 
             Example:
 
@@ -28,7 +28,7 @@ class ZillowWrapper(object):
             >>> deep_search_response = zillow_data.get_deep_search_results(address, zipcode, rentzestimate)
             >>> result = GetDeepSearchResults(deep_search_response)
 
-        2. The GetUpdatedPropertyDetails API endpoint (:class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`) which requires a Zillow Web Service Identifier as an argument. You can acquire this identifier by accessing ``.zillow_id`` from a :class:`pyzillow.pyzillow.GetDeepSearchResults` object.
+        2. The GetUpdatedPropertyDetails API endpoint (:class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`) which requires a Zillow Property ID (ZPID) as an argument. You can acquire this identifier by accessing ``.zillow_id`` from a :class:`pyzillow.pyzillow.GetDeepSearchResults` object.
         
             Example:
             
@@ -43,7 +43,7 @@ class ZillowWrapper(object):
         self.api_key = api_key
 
     def get_deep_search_results(self, address: str, zipcode: str, rentzestimate: bool=False):
-        """This method provides results from the GetDeepSearchResults API endpoint as an xml object.
+        """This method provides results from the GetDeepSearchResults API endpoint as an XML object.
 
         :param address: Street address to look up
         :type address: str
@@ -64,7 +64,7 @@ class ZillowWrapper(object):
         return self.get_data(url, params)
 
     def get_updated_property_details(self, zpid: str):
-        """This method provides results from the GetUpdatedPropertyDetails API endpoint as an xml object.
+        """This method provides results from the GetUpdatedPropertyDetails API endpoint as an XML object.
 
         :param zpid: Zillow Web Service Identifier
         :type zpid: str
@@ -80,7 +80,7 @@ class ZillowWrapper(object):
         return self.get_data(url, params)
 
     def get_data(self, url: str, params: dict):
-        """This method requests data from the API endpoint specified in the url argument using parameters from the params argument.
+        """This method requests data from the API endpoint specified in the url argument. It uses parameters from the params argument.
 
         :param url: URL of API endpoint
         :type url: str
