@@ -3,17 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-pyzillow
+PyZillow
 ========
 
 A python library to access the Zillow APIs
 ------------------------------------------
 
-pyzillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm).
+PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm).
 
-Currrently, pyzillow supports the GetDeepSearchResults and GetUpdatedPropertyDetails API endpoints.
+Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
 
-With pyzillow, you are able to directly convert an address/zipcode (GetDeepSearchResults API) or zillow id (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
+With PyZillow, you are able to directly convert an address/zipcode (GetDeepSearchResults API) or Zillow ID (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
 Contents:
 =========
@@ -31,8 +31,8 @@ Contents:
 Feedback
 ========
 
-If you have any suggestions or questions about **PyZillow** feel free to email me
-at hannes.hapke@gmail.com.
+If you have any suggestions or questions about PyZillow, feel free to send us an email
+at pyzillow@tcmetzger.net.
 
-If you encounter any errors or problems with **PyZillow**, please let me know!
+If you encounter any errors or problems with PyZillow, please let us know!
 Open an Issue at the GitHub http://github.com/hanneshapke/pyzillow main repository.

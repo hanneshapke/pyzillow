@@ -1,19 +1,13 @@
 Getting started
 ===============
 
-Obtain an API key
-*****************
-An API key from Zillow is required to request data through the Zillow API. You can apply for an API key by following these instructions: `<https://www.zillow.com/howto/api/APIOverview.htm>`_.
-
-Import pyzillow
-***************
-To use PyZillow in a project:
-
->>> import pyzillow
+Obtain an API key (Zillow Web Service Identifier)
+***************************************************
+You need an API key from Zillow to request data from the Zillow API. You can apply for an API key by following these instructions: `<https://www.zillow.com/howto/api/APIOverview.htm>`_. Zillow refers to an API key as 'Zillow Web Service Identifier'.
 
 Initialize the API
 ******************
-To be able to communicate with the API, you first need to initialize the ZillowWrapper with your API key:
+To be able to communicate with the API, you first need to initialize a ZillowWrapper object with your API key. For example:
 
 >>> from pyzillow.pyzillow import ZillowWrapper
 >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
@@ -22,9 +16,9 @@ Access the GetDeepSearchResults API
 ***********************************
 The GetDeepSearchResults API queries the Zillow database for information on a specific address. The endpoint requires the following arguments:
     
-* A street address (eg ``'2114 Bigelow Ave'``)
-* A zip code or city+state combination (eg ``'98109'`` or ``'Seattle, WA'``)
-* Optional: Enabeling or disabeling Zillow Rentzestimate information in API results (``True``/``False``)
+* A street address (e.g. ``'2114 Bigelow Ave'``)
+* A zip code or city+state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
+* Optional: Enabling or disabling Zillow Rentzestimate information in API results (``True``/``False``)
 
 To query the GetDeepSearchResults API:
 
@@ -63,7 +57,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.rentzestimate_valuation_range_high``
 ``.rentzestimate_valuation_range_low``
 
-Access the information by calling the ``GetDeepSearchResults`` object's attributes, for example:
+Access the information by calling the ``GetDeepSearchResults`` object's attributes. For example:
 
 >>> print(result.zillow_id)
 48749425
@@ -71,8 +65,10 @@ Access the information by calling the ``GetDeepSearchResults`` object's attribut
 3.0
 
 Access the GetUpdatedPropertyDetails API
-***********************************
-The GetUpdatedPropertyDetails API endpoint requires a Zillow Web Service Identifier as an argument. You can acquire this identifier by accessing ``.zillow_id`` from a GetDeepSearchResults object.
+****************************************
+The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. You can acquire this identifier by accessing ``.zillow_id`` from a GetDeepSearchResults object. 
+
+Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``. However, it does not include Zestimate or Rentzestimate information.
 
 To query the GetUpdatedPropertyDetails API:
 
@@ -123,7 +119,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.agent_profile_url``
 ``.brokerage``
 
-Access the information by calling the ``GetUpdatedPropertyDetails`` object's attributes, for example:
+Access the information by calling the ``GetUpdatedPropertyDetails`` object's attributes. For example:
 
 >>> print(result.home_type)
 SingleFamily

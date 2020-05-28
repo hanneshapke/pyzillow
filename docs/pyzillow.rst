@@ -1,5 +1,5 @@
-The pyzillow package
-====================
+Modules Documentation
+=====================
 
 pyzillow.pyzillow module
 ------------------------

@@ -24,13 +24,13 @@ If you are reporting a bug, please include:
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with "bug"
-is open to whoever wants to implement it.
+Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
+is open to whoever wants to fix it.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features. Anything tagged with "feature"
+Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for features. Anything tagged with "feature"
 is open to whoever wants to implement it.
 
 Write Documentation
@@ -38,7 +38,7 @@ Write Documentation
 
 PyZillow could always use more documentation, whether as part of the 
 official PyZillow docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+articles, or tweets.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ The best way to send feedback is to file an issue at https://github.com/hannesha
 
 If you are proposing a feature:
 
-* Explain in detail how it would work.
+* Explain in detail how the feature would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
@@ -69,8 +69,8 @@ local development.
 
 Now you can make your changes locally.
 
-4. When you're done making changes, check that your changes pass style and unit
-   tests, including testing other Python versions with tox::
+4. When you're done making changes, use ``tox`` to check that your changes pass style and unit
+   tests, including testing other Python versions::
 
     $ tox
 
@@ -89,13 +89,13 @@ To get tox, just pip install it.
 Pull Request Guidelines
 -----------------------
 
-Before you submit a pull request, check that it meets these guidelines:
+Check that your pull request meets these guidelines before you submit it:
 
 1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put
+2. If the pull request adds functionality, the docs have to be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.6, 2.7 and 3.4.
+3. The pull request should work with Python 2.6, 2.7 and 3.4.
    Check https://travis-ci.org/hanneshapke/pyzillow 
    under pull requests for active pull requests or run the ``tox`` command and
    make sure that the tests pass for all supported Python versions.
