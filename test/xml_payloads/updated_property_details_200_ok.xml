@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<UpdatedPropertyDetails:updatedPropertyDetails xmlns:UpdatedPropertyDetails="http://www.zillow.com/static/xsd/UpdatedPropertyDetails.xsd" xsi:schemaLocation="http://www.zillow.com/static/xsd/UpdatedPropertyDetails.xsd http://www.zillowstatic.com/vstatic/34794f0/static/xsd/UpdatedPropertyDetails.xsd" 
+<UpdatedPropertyDetails:updatedPropertyDetails xmlns:UpdatedPropertyDetails="http://www.zillow.com/static/xsd/UpdatedPropertyDetails.xsd" xsi:schemaLocation="http://www.zillow.com/static/xsd/UpdatedPropertyDetails.xsd http://www.zillowstatic.com/vstatic/34794f0/static/xsd/UpdatedPropertyDetails.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <request>
         <zpid>48749425</zpid>

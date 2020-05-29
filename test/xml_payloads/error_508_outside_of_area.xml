@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SearchResults:searchresults xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/80d5e73/static/xsd/SearchResults.xsd" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<SearchResults:searchresults xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/80d5e73/static/xsd/SearchResults.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
     <request>
         <address>Calle 21 y O, Vedado, Plaza, Ciudad de la Habana, Cuba</address>

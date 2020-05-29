@@ -100,7 +100,7 @@ If rentzestimate=True the following additional attributes are supported:
     - rentzestimate_value_change
     - rentzestimate_valuation_range_high
     - rentzestimate_valuation_range_low
-    
+
 
 Usage of the GetUpdatedPropertyDetails API
 ------------------------------------------

@@ -78,7 +78,7 @@ The following attributes are currently supported:
     - zestimate_valuation_range_high
     - zestimate_valuation_range_low
     - zestimate_percentile
-    
+
 If rentzestimate=True the following additional attributes are supported:
 
     - rentzestimate_amount
@@ -158,6 +158,3 @@ Changelog
 - Version 0.3 > pip created and code refactored
 - Version 0.2 > API Wrapper for the GetDeepSearchResults and GetUpdatedPropertyDetails API. test.py and setup.py created.
 - Version 0.1 > Project created
-
-
-
