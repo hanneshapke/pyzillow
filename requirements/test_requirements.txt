@@ -1,7 +1,7 @@
 python-coveralls
 cov-core==1.15.0
-coverage==3.7.1
-pytest==2.6.4
-pytest-cov==1.8.1
-pytest-flakes==0.2
-responses==0.4.0
+coverage==5.1
+pytest==5.4.2
+pytest-cov==2.9.0
+pytest-flakes==4.0.0
+responses==0.10.14
