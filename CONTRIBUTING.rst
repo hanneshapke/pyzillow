@@ -6,10 +6,10 @@ little bit helps, and credit will always be given.
 
 You can contribute in many ways:
 
-Types of Contributions
+Types of contributions
 ----------------------
 
-Report Bugs
+Report bugs
 ~~~~~~~~~~~
 
 Report bugs at https://github.com/hanneshapke/pyzillow/issues.
@@ -20,26 +20,26 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix Bugs
+Fix bugs
 ~~~~~~~~
 
 Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
 is open to whoever wants to fix it.
 
-Implement Features
+Implement features
 ~~~~~~~~~~~~~~~~~~
 
 Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for features. Anything tagged with "feature"
 is open to whoever wants to implement it.
 
-Write Documentation
+Write documentation
 ~~~~~~~~~~~~~~~~~~~
 
 PyZillow could always use more documentation, whether as part of the 
 official PyZillow docs, in docstrings, or even on the web in blog posts,
 articles, or tweets.
 
-Submit Feedback
+Submit feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at https://github.com/hanneshapke/pyzillow/issues.
@@ -51,7 +51,7 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-Get Started!
+Get started!
 ------------
 
 Ready to contribute? Here's how to set up PyZillow for
@@ -85,7 +85,7 @@ To get tox, just pip install it.
 
 .. _Fork: https://github.com/hanneshapke/pyzillow/fork
 
-Pull Request Guidelines
+Pull request guidelines
 -----------------------
 
 Check that your pull request meets these guidelines before you submit it:

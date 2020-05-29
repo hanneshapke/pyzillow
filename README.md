@@ -5,7 +5,10 @@ PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/A
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
 
-**Documentation available here**: http://pyzillow.readthedocs.org/en/latest/
+Documentation
+-------------
+
+The PyZillow documentation is available here: http://pyzillow.readthedocs.org/en/latest/
 
 Contributors
 ------------

@@ -56,7 +56,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.zestimate_value_change``
 ``.zillow_id``
 
-Access the information by calling the ``GetDeepSearchResults`` object's attributes. For example:
+Access the information by reading the ``GetDeepSearchResults`` object's attributes. For example:
 
 >>> print(result.zillow_id)
 48749425
@@ -65,7 +65,7 @@ Access the information by calling the ``GetDeepSearchResults`` object's attribut
 
 Access the GetUpdatedPropertyDetails API
 ****************************************
-The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. You can acquire this identifier by accessing ``.zillow_id`` from a GetDeepSearchResults object. 
+The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. To find this identifier, you can read the attribute ``.zillow_id`` of a GetDeepSearchResults object. 
 
 Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``. However, it does not include Zestimate or Rentzestimate information.
 
@@ -118,7 +118,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.year_updated``
 ``.zillow_id``
 
-Access the information by calling the ``GetUpdatedPropertyDetails`` object's attributes. For example:
+Access the information by reading the ``GetUpdatedPropertyDetails`` object's attributes. For example:
 
 >>> print(result.home_type)
 SingleFamily

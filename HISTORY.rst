@@ -1,12 +1,12 @@
 .. :changelog:
 
-History
--------
+Version history
+---------------
 
 0.5.0 (2015-09-12)
 ++++++++++++++++++
 
-* Removed Django depemdemcy, mocked tests, Python 3.4 support
+* Removed Django dependency, mocked tests, Python 3.4 support
 
 0.4.0 (2014-12-20)
 ++++++++++++++++++

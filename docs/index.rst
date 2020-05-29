@@ -13,18 +13,19 @@ PyZillow is a Python wrapper for `Zillow's API <http://www.zillow.com/howto/api/
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
 
-Contents:
-=========
+Scope of this document
+----------------------
 
 This documentation describes how to use PyZillow to access data through the Zillow API in Python.
 You will learn how to install PyZillow, initialize the API wrapper with the ZillowConnect class,
 and how to use the classes GetDeepSearchResults and GetUpdatedPropertyDetails to request and parse
-data from the Zillow API. This documentation also includes information about contributing to PyZillow
-and how to send feedback to the developers.
+data from the Zillow API.
 
+Table of contents
+-----------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    installation
    getting_started
@@ -32,12 +33,3 @@ and how to send feedback to the developers.
    contributing
    authors
    history
-
-Feedback
-========
-
-If you have any suggestions or questions about PyZillow, feel free to send us an email
-at pyzillow@tcmetzger.net.
-
-If you encounter any errors or problems with PyZillow, please let us know!
-Open an Issue at the GitHub http://github.com/hanneshapke/pyzillow main repository.
