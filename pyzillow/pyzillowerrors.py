@@ -38,6 +38,11 @@ class ZillowError(Exception):
                 + "Please come back later and try again.",
             ),
             (
+                7,
+                "Too many requests. \n"
+                + "Daily requests exceeded.",
+            ),
+            (
                 500,
                 "Invalid or missing address parameter.\n"
                 "Check if the input address parameter "
@@ -104,18 +109,8 @@ class ZillowError(Exception):
         self.url = url
         self.response = response
 
-    def __unicode__(self):
+    def __str__(self):
         return self.message
-
-    if sys.version_info[0] >= 3:  # Python 3
-
-        def __str__(self):
-            return self.__unicode__()
-
-    else:  # Python 2
-
-        def __str__(self):
-            return self.__unicode__().encode("utf8")
 
 
 class ZillowFail(Exception):
