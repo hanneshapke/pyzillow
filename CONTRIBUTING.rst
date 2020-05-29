@@ -9,8 +9,8 @@ You can contribute in many ways:
 Types of contributions
 ----------------------
 
-Report bugs
-~~~~~~~~~~~
+Reporting bugs
+~~~~~~~~~~~~~~
 
 Report bugs at https://github.com/hanneshapke/pyzillow/issues.
 
@@ -20,27 +20,27 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix bugs
-~~~~~~~~
+Fixing bugs
+~~~~~~~~~~~
 
 Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
 is open to whoever wants to fix it.
 
-Implement features
-~~~~~~~~~~~~~~~~~~
+Implementing features
+~~~~~~~~~~~~~~~~~~~~~
 
 Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for features. Anything tagged with "feature"
 is open to whoever wants to implement it.
 
-Write documentation
-~~~~~~~~~~~~~~~~~~~
+Writing documentation
+~~~~~~~~~~~~~~~~~~~~~
 
 PyZillow could always use more documentation, whether as part of the 
 official PyZillow docs, in docstrings, or even on the web in blog posts,
 articles, or tweets.
 
-Submit feedback
-~~~~~~~~~~~~~~~
+Submitzing feedback
+~~~~~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at https://github.com/hanneshapke/pyzillow/issues.
 
@@ -51,8 +51,8 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-Get started!
-------------
+Geting started
+--------------
 
 Ready to contribute? Here's how to set up PyZillow for
 local development.
@@ -89,8 +89,8 @@ To run a subset of tests::
 
 .. _Fork: https://github.com/hanneshapke/pyzillow/fork
 
-Pull request guidelines
------------------------
+Submitting a pull request
+-------------------------
 
 Check that your pull request meets these guidelines before you submit it:
 
