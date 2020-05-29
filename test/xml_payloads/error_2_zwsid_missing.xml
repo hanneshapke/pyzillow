@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchResults:searchresults xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/80d5e73/static/xsd/SearchResults.xsd" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+    <request>
+        <address>2114 Bigelow Ave Seattle, WA</address>
+        <citystatezip>98109</citystatezip>
+    </request>
+    <message>
+        <text>Error: invalid or missing ZWSID parameter</text>
+        <code>2</code>
+    </message>
+</SearchResults:searchresults><!-- H:002  T:1ms  S:150  R:Fri May 29 10:12:22 PDT 2020  B:5.0.65042-master.b06afcd~delivery_ready.c5a1f6a9 -->
