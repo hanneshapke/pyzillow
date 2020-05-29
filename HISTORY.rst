@@ -1,18 +1,19 @@
 .. :changelog:
 
-History
--------
+Version history
+---------------
 
 0.6.0 (2020-05-28)
 ++++++++++++++++++
 
 * Updated tests, incl. complete API mocking
 * Updated test dependencies
+* Removed Python 2 support
 
 0.5.0 (2015-09-12)
 ++++++++++++++++++
 
-* Removed Django depemdemcy, mocked tests, Python 3.4 support
+* Removed Django dependency, mocked tests, Python 3.4 support
 
 0.4.0 (2014-12-20)
 ++++++++++++++++++

@@ -2,12 +2,15 @@
 Installation
 ============
 
-At the command line either via easy_install or pip::
+Install PyZillow
+****************
+Use ``pip`` on a command line to download PyZillow from PyPI and install it on your system::
 
-    $ easy_install pyzillow
     $ pip install pyzillow
 
-Or, if you have virtualenvwrapper installed::
+Getting the code
+****************
+You can download the most recent version of PyZillow from `GitHub <https://github.com/hanneshapke/pyzillow>`_::
 
-    $ mkvirtualenv pyzillow
-    $ pip install pyzillow
+    $ git clone https://github.com/hanneshapke/pyzillow.git
+    $ python setup.py install

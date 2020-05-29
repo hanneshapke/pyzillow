@@ -7,21 +7,69 @@ from . import __version__
 
 
 class ZillowWrapper(object):
-    """
+    """This class provides an interface into the Zillow API. An API key is required to
+       create an instance of this class:
+
+    >>> from pyzillow.pyzillow import ZillowWrapper
+    >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+
+    To request data from Zillow, you can choose between:
+
+        1. The GetDeepSearchResults API endpoint (:class:`pyzillow.pyzillow.GetDeepSearchResults`)
+           which requires the following arguments:
+
+            * A street address (e.g. ``'2114 Bigelow Ave'``)
+            * A ZIP code or city and state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
+            * Optional: Enabling or disabling Zillow Rentzestimate information in
+              API results (``True``/``False``)
+
+            Example:
+
+            >>> from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults
+            >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+            >>> deep_search_response = zillow_data.get_deep_search_results(address,
+                                                                           zipcode,
+                                                                           rentzestimate)
+            >>> result = GetDeepSearchResults(deep_search_response)
+
+        2. The GetUpdatedPropertyDetails API endpoint
+           (:class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`) which requires a
+           Zillow Property ID (ZPID) as an argument. You can acquire this identifier by
+           accessing ``.zillow_id`` from a :class:`pyzillow.pyzillow.GetDeepSearchResults`
+           object.
+
+            Example:
+
+            >>> from pyzillow.pyzillow import ZillowWrapper, GetUpdatedPropertyDetails
+            >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
+            >>> updated_property_details_response = \
+                zillow_data.get_updated_property_details(zillow_id)
+            >>> result = GetUpdatedPropertyDetails(updated_property_details_response)
     """
 
-    def __init__(self, api_key=None):
-        """
-
+    def __init__(self, api_key: str = None):
+        """Constructor method
         """
         self.api_key = api_key
 
-    def get_deep_search_results(self, address, zipcode, rentzestimate=False):
-        """
-        GetDeepSearchResults API
-        """
+    def get_deep_search_results(
+        self, address: str, zipcode: str, rentzestimate: bool = False
+    ):
+        """This method provides results from the GetDeepSearchResults API endpoint
+           as an XML object.
 
+        :param address: Street address to look up
+        :type address: str
+        :param zipcode: ZIP code to look up
+        :type zipcode: str
+        :param rentzestimate: Add Rent Zestimate information to result (True/False),
+         defaults to False
+        :type rentzestimate: bool, optional
+        :return: Result from API query
+        :rtype: xml.etree.ElementTree.Element
+        """
         url = "http://www.zillow.com/webservice/GetDeepSearchResults.htm"
+
         params = {
             "address": address,
             "citystatezip": zipcode,
@@ -30,19 +78,35 @@ class ZillowWrapper(object):
         }
         return self.get_data(url, params)
 
-    def get_updated_property_details(self, zpid):
-        """
-        GetUpdatedPropertyDetails API
+    def get_updated_property_details(self, zpid: str):
+        """This method provides results from the GetUpdatedPropertyDetails API endpoint
+           as an XML object.
+
+        :param zpid: Zillow Web Service Identifier
+        :type zpid: str
+        :return: Result from API query
+        :rtype: xml.etree.ElementTree.Element
         """
         url = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm"
 
         params = {"zpid": zpid, "zws-id": self.api_key}
         return self.get_data(url, params)
 
-    def get_data(self, url, params):
-        """
-        """
+    def get_data(self, url: str, params: dict):
+        """This method requests data from the API endpoint specified in the url argument.
+           It uses parameters from the params argument.
 
+        :param url: URL of API endpoint
+        :type url: str
+        :param params: Parameters for API query
+        :type params: dict
+        :raises ZillowFail: The API endpoint could not be reached or the request
+            did not return valid XML
+        :raises ZillowError: The API endpoint responded with an error code
+        :raises ZillowNoResults: The request did not return any results
+        :return: Result from API query
+        :rtype: xml.etree.ElementTree.Element
+        """
         try:
             request = requests.get(
                 url=url,
@@ -79,7 +143,8 @@ class ZillowWrapper(object):
 
 
 class ZillowResults(object):
-    """
+    """Base class for :class:`pyzillow.pyzillow.GetDeepSearchResults`
+       and :class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`.
     """
 
     attribute_mapping = {}
@@ -113,7 +178,37 @@ class ZillowResults(object):
 
 
 class GetDeepSearchResults(ZillowResults):
-    """
+    """Maps results from the XML data array into attributes of an instance of
+       GetDeepSearchResults.
+
+    An instance of ``GetDeepSearchResults`` has the following attributes:
+    ``.bathrooms``
+    ``.bedrooms``
+    ``.graph_data_link``
+    ``.home_detail_link``
+    ``.home_size``
+    ``.home_type``
+    ``.last_sold_date``
+    ``.last_sold_price``
+    ``.latitude``
+    ``.longitude``
+    ``.map_this_home_link``
+    ``.property_size``
+    ``.rentzestimate_amount``
+    ``.rentzestimate_last_updated``
+    ``.rentzestimate_valuation_range_high``
+    ``.rentzestimate_valuation_range_low``
+    ``.rentzestimate_value_change``
+    ``.tax_value``
+    ``.tax_year``
+    ``.year_built``
+    ``.zestimate_amount``
+    ``.zestimate_last_updated``
+    ``.zestimate_percentile``
+    ``.zestimate_valuation_range_high``
+    ``.zestimate_valuation_range_low``
+    ``.zestimate_value_change``
+    ``.zillow_id``
     """
 
     attribute_mapping = {
@@ -147,8 +242,7 @@ class GetDeepSearchResults(ZillowResults):
     }
 
     def __init__(self, data, *args, **kwargs):
-        """
-        Creates instance of GeocoderResult from the provided XML data array
+        """Constructor method
         """
         self.data = data.findall("response/results")[0]
         for attr in self.attribute_mapping.__iter__():
@@ -189,7 +283,50 @@ class GetDeepSearchResults(ZillowResults):
 
 
 class GetUpdatedPropertyDetails(ZillowResults):
-    """
+    """Maps results from the XML data array into attributes of an instance of
+       GetUpdatedPropertyDetails.
+
+    An instance of ``GetDeepSearchResults`` has the following attributes:
+    ``.agent_name``
+    ``.agent_profile_url``
+    ``.appliances``
+    ``.basement``
+    ``.bathrooms``
+    ``.bedrooms``
+    ``.brokerage``
+    ``.elementary_school``
+    ``.floor_material``
+    ``.graph_data_link``
+    ``.heating_sources``
+    ``.heating_system``
+    ``.home_description``
+    ``.home_detail_link``
+    ``.home_info``
+    ``.home_size``
+    ``.home_type``
+    ``.last_sold_date``
+    ``.last_sold_price``
+    ``.latitude``
+    ``.longitude``
+    ``.map_this_home_link``
+    ``.middle_school``
+    ``.neighborhood``
+    ``.num_floors``
+    ``.num_rooms``
+    ``.parking_type``
+    ``.photo_gallery``
+    ``.posting_status``
+    ``.posting_type``
+    ``.property_size``
+    ``.roof``
+    ``.rooms``
+    ``.school_district``
+    ``.tax_value``
+    ``.tax_year``
+    ``.view``
+    ``.year_built``
+    ``.year_updated``
+    ``.zillow_id``
     """
 
     attribute_mapping = {
@@ -239,8 +376,7 @@ class GetUpdatedPropertyDetails(ZillowResults):
     }
 
     def __init__(self, data, *args, **kwargs):
-        """
-        Creates instance of GeocoderResult from the provided XML data array
+        """Constructor method
         """
         self.data = data.findall("response")[0]
         for attr in self.attribute_mapping.__iter__():
