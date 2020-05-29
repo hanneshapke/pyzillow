@@ -3,6 +3,10 @@
 Version history
 ---------------
 
+0.6.1 (2020-05-28)
+++++++++++++++++++
+* Updated error handling, too many request error, Github issue 18
+
 0.6.0 (2020-05-28)
 ++++++++++++++++++
 
