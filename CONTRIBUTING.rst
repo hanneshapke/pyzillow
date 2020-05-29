@@ -60,11 +60,11 @@ local development.
 1. Fork_ the `pyzillow` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:hanneshapke/pyzillow.git
+        $ git clone git@github.com:hanneshapke/pyzillow.git
 
 3. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+        $ git checkout -b name-of-your-bugfix-or-feature
 
 Now you can make your changes locally.
 
@@ -74,10 +74,6 @@ Now you can make your changes locally.
     $ tox
 
 To get tox, just pip install it.
-
-To run a subset of tests::
-
-	 $ pytest test/test_pyzillow.py
 
 5. Commit your changes and push your branch to GitHub::
 
@@ -98,7 +94,13 @@ Check that your pull request meets these guidelines before you submit it:
 2. If the pull request adds functionality, the docs have to be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work with Python 2.6, 2.7 and 3.4.
+3. The pull request should work with Python 3.6, 3.7 and 3.8.
    Check https://travis-ci.org/hanneshapke/pyzillow 
    under pull requests for active pull requests or run the ``tox`` command and
    make sure that the tests pass for all supported Python versions.
+
+Running a subset of tests
+-------------------------
+Use pytest in case you want to run a subset of tests::
+
+    $ pytest test/test_pyzillow.py
