@@ -67,14 +67,14 @@ class ZillowWrapper(object):
         try:
             response = ElementTree.fromstring(request.text)
         except ElementTree.ParseError:
-            print("Zillow response is not a valid XML (%s)" % (params["address"]))
+            print("Zillow response is not a valid XML ({})".format(params["address"]))
             raise ZillowFail
 
         if response.findall("message/code")[0].text != "0":
             raise ZillowError(int(response.findall("message/code")[0].text))
         else:
             if not response.findall("response"):
-                print("Zillow returned no results for (%s)" % (params["address"]))
+                print("Zillow returned no results for ({})".format(params["address"]))
                 raise ZillowNoResults
             return response
 
@@ -93,18 +93,8 @@ class ZillowResults(object):
         except AttributeError:
             return None
 
-    def __unicode__(self):
+    def __str__(self):
         return self.zillow_id
-
-    if sys.version_info[0] >= 3:  # Python 3
-
-        def __str__(self):
-            return self.__unicode__()
-
-    else:  # Python 2
-
-        def __str__(self):
-            return self.__unicode__().encode("utf8")
 
     @property
     def area_unit(self):
@@ -166,7 +156,7 @@ class GetDeepSearchResults(ZillowResults):
             try:
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
-                print("AttributeError with %s" % attr)
+                print("AttributeError with {}".format(attr)
 
     @property
     def region_name(self):
@@ -258,4 +248,4 @@ class GetUpdatedPropertyDetails(ZillowResults):
             try:
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
-                print("AttributeError with %s" % attr)
+                print("AttributeError with {}".format(attr))
