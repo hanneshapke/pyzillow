@@ -1,19 +1,19 @@
 Getting started
 ===============
 
-Obtain an API key (Zillow Web Service Identifier)
-***************************************************
+Obtaining an API key (Zillow Web Service Identifier)
+****************************************************
 You need an API key from Zillow to request data from the Zillow API. You can apply for an API key by following these instructions: `<https://www.zillow.com/howto/api/APIOverview.htm>`_. Zillow calls API keys 'Zillow Web Service Identifier'.
 
-Initialize the API
-******************
+Initializing the API
+********************
 To be able to communicate with the API, you first need to initialize a ZillowWrapper object with your API key. For example:
 
 >>> from pyzillow.pyzillow import ZillowWrapper
 >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
 
-Access the GetDeepSearchResults API
-***********************************
+Accessing the GetDeepSearchResults API
+**************************************
 The GetDeepSearchResults API queries the Zillow database for information on a specific address. The endpoint requires the following arguments:
     
 * A street address (e.g. ``'2114 Bigelow Ave'``)
@@ -63,8 +63,8 @@ Access the information by reading the ``GetDeepSearchResults`` object's attribut
 >>> print(result.bathrooms)
 3.0
 
-Access the GetUpdatedPropertyDetails API
-****************************************
+Accessing the GetUpdatedPropertyDetails API
+*******************************************
 The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. To find this identifier, you can read the attribute ``.zillow_id`` of a GetDeepSearchResults object. 
 
 Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``. However, it does not include Zestimate or Rentzestimate information.
