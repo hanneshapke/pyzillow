@@ -75,6 +75,10 @@ Now you can make your changes locally.
 
 To get tox, just pip install it.
 
+To run a subset of tests::
+
+	 $ pytest test/test_pyzillow.py
+
 5. Commit your changes and push your branch to GitHub::
 
     $ git add .
