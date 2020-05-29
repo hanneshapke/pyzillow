@@ -1,0 +1,15 @@
+docs/conf.py:14:11: E401 multiple imports on one line
+docs/conf.py:25:1: E402 module level import not at top of file
+docs/conf.py:183:5: E265 block comment should start with '# '
+docs/conf.py:185:5: E265 block comment should start with '# '
+docs/conf.py:187:5: E265 block comment should start with '# '
+setup.py:40:25: E231 missing whitespace after ','
+setup.py:43:33: E231 missing whitespace after ','
+docs/conf.py:14:11: E401 multiple imports on one line
+docs/conf.py:25:1: E402 module level import not at top of file
+docs/conf.py:183:5: E265 block comment should start with '# '
+docs/conf.py:185:5: E265 block comment should start with '# '
+docs/conf.py:187:5: E265 block comment should start with '# '
+docs/conf.py:184:5: E265 block comment should start with '# '
+docs/conf.py:186:5: E265 block comment should start with '# '
+docs/conf.py:188:5: E265 block comment should start with '# '
