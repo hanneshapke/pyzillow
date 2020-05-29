@@ -1,7 +1,7 @@
 PyZillow 0.5.5
 ==================
 
-PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm). With PyZillow, you can directly convert a physical address or a Zillow ID into real estate data from the Zillow database.
+PyZillow is a Python wrapper for `Zillow's API <http://www.zillow.com/howto/api/APIOverview.htm>`_. With PyZillow, you can use a physical address or a Zillow ID to access real estate data from the Zillow database.
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
 
