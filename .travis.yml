@@ -15,7 +15,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
-  - py.test --flake  --cov-report term --cov pyzillow test/
+  - pytest  # --flake  --cov-report term --cov pyzillow test/
 
 after_success:
   - coveralls

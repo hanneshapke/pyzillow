@@ -27,7 +27,7 @@ lint:
 	flake8 pyzillow test
 
 test:
-	py.test
+	pytest
 
 test-all:
 	tox

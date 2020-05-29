@@ -106,4 +106,4 @@ Tips
 
 To run a subset of tests::
 
-	 $ py.test test/test_pyzillow.py
+	 $ pytest test/test_pyzillow.py
