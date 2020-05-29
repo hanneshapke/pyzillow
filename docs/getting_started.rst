@@ -3,7 +3,7 @@ Getting started
 
 Obtain an API key (Zillow Web Service Identifier)
 ***************************************************
-You need an API key from Zillow to request data from the Zillow API. You can apply for an API key by following these instructions: `<https://www.zillow.com/howto/api/APIOverview.htm>`_. Zillow refers to an API key as 'Zillow Web Service Identifier'.
+You need an API key from Zillow to request data from the Zillow API. You can apply for an API key by following these instructions: `<https://www.zillow.com/howto/api/APIOverview.htm>`_. Zillow calls API keys 'Zillow Web Service Identifier'.
 
 Initialize the API
 ******************
