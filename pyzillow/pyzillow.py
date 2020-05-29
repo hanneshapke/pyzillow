@@ -1,4 +1,3 @@
-import sys
 import requests
 
 from xml.etree import cElementTree as ElementTree  # for zillow API
@@ -156,7 +155,7 @@ class GetDeepSearchResults(ZillowResults):
             try:
                 self.__setattr__(attr, self.get_attr(attr))
             except AttributeError:
-                print("AttributeError with {}".format(attr)
+                print("AttributeError with {}".format(attr))
 
     @property
     def region_name(self):
