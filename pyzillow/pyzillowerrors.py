@@ -1,6 +1,3 @@
-import sys
-
-
 class ZillowError(Exception):
     """A ZillowError exception is raised if the API endpoint responded
     with an error code (http://www.zillow.com/howto/api/GetDeepSearchResults.htm).
@@ -37,11 +34,7 @@ class ZillowError(Exception):
                 + "The Zillow Web Service is currently not available. "
                 + "Please come back later and try again.",
             ),
-            (
-                7,
-                "Too many requests. \n"
-                + "Daily requests exceeded.",
-            ),
+            (7, "Too many requests. \n" + "Daily requests exceeded.",),
             (
                 500,
                 "Invalid or missing address parameter.\n"
