@@ -44,3 +44,7 @@ output/*/index.html
 
 # Sphinx
 docs/_build
+
+# project
+.pyzillow-env/
+.artifacts/flake8.log

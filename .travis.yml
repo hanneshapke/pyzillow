@@ -3,9 +3,9 @@
 language: python
 
 python:
-  - "2.7"
-  - "2.6"
-  - "3.4"
+  - "3.6"
+  - "3.7"
+  - "3.8"
 
 install:
   - pip install -U -r requirements/requirements.txt
@@ -14,7 +14,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
-  - py.test --flake  --cov-report term --cov pyzillow test/
+  - pytest . --cov-report term-missing  --cov pyzillow test/
 
 after_success:
   - coveralls

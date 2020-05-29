@@ -1,8 +1,11 @@
 .PHONY: help clean clean-pyc clean-build list test test-all coverage docs release sdist
 
 help:
-	@echo "clean-build - remove build artifacts"
-	@echo "clean-pyc - remove Python file artifacts"
+	@echo "clean - remove build artifacts"
+	@echo "develop - set up dev environment"
+	@echo "install-deps"
+	@echo "install-pre-commit"
+	@echo "setup-git"
 	@echo "lint - check style with flake8"
 	@echo "test - run tests quickly with the default Python"
 	@echo "testall - run tests on every Python version with tox"
@@ -11,23 +14,33 @@ help:
 	@echo "release - package and upload a release"
 	@echo "sdist - package"
 
-clean: clean-build clean-pyc
-
-clean-build:
+clean:
 	rm -fr build/
 	rm -fr dist/
 	rm -fr *.egg-info
+	find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 
-clean-pyc:
-	find . -name '*.pyc' -exec rm -f {} +
-	find . -name '*.pyo' -exec rm -f {} +
-	find . -name '*~' -exec rm -f {} +
+develop: setup-git install-deps
 
-lint:
-	flake8 pyzillow test
+install-deps:
+	pip install -e "file://`pwd`#egg=responses[tests]"
 
-test:
-	py.test
+install-pre-commit:
+	pip install "pre-commit>=1.10.1,<1.11.0"
+
+setup-git: install-pre-commit
+	pre-commit install
+	git config branch.autosetuprebase always
+
+lint: install-pre-commit
+	@echo "Linting Python files"
+	pre-commit run -a
+	@echo ""
+
+test: develop lint
+	@echo "Running Python tests"
+	py.test .
+	@echo ""
 
 test-all:
 	tox

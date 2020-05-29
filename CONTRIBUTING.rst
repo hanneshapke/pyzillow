@@ -1,8 +1,7 @@
 Contributing
 ============
 
-Contributions are greatly appreciated! Every
-little bit helps, and credit will always be given. 
+Contributions are greatly appreciated! Every little bit helps, and credit will always be given. 
 
 You can contribute in many ways:
 
