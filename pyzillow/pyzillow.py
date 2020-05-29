@@ -18,7 +18,7 @@ class ZillowWrapper(object):
         1. The GetDeepSearchResults API endpoint (:class:`pyzillow.pyzillow.GetDeepSearchResults`) which requires the following arguments: 
             
             * A street address (e.g. ``'2114 Bigelow Ave'``)
-            * A zip code or city+state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
+            * A ZIP code or city and state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
             * Optional: Enabling or disabling Zillow Rentzestimate information in API results (``True``/``False``)
 
             Example:
@@ -181,34 +181,33 @@ class ZillowResults(object):
 class GetDeepSearchResults(ZillowResults):
     """Maps results from the XML data array into attributes of an instance of GetDeepSearchResults.
     An instance of ``GetDeepSearchResults`` has the following attributes:
-    ``.data``
-    ``.zillow_id``
-    ``.home_type``
-    ``.home_detail_link``
-    ``.graph_data_link``
-    ``.map_this_home_link``
-    ``.latitude``
-    ``.longitude``
-    ``.tax_year``
-    ``.tax_value``
-    ``.year_built``
-    ``.property_size``
-    ``.home_size``
     ``.bathrooms``
     ``.bedrooms``
+    ``.graph_data_link``
+    ``.home_detail_link``
+    ``.home_size``
+    ``.home_type``
     ``.last_sold_date``
     ``.last_sold_price``
-    ``.zestimate_amount``
-    ``.zestimate_last_updated``
-    ``.zestimate_value_change``
-    ``.zestimate_valuation_range_high``
-    ``.zestimate_valuation_range_low``
-    ``.zestimate_percentile``
+    ``.latitude``
+    ``.longitude``
+    ``.map_this_home_link``
+    ``.property_size``
     ``.rentzestimate_amount``
     ``.rentzestimate_last_updated``
-    ``.rentzestimate_value_change``
     ``.rentzestimate_valuation_range_high``
     ``.rentzestimate_valuation_range_low``
+    ``.rentzestimate_value_change``
+    ``.tax_value``
+    ``.tax_year``
+    ``.year_built``
+    ``.zestimate_amount``
+    ``.zestimate_last_updated``
+    ``.zestimate_percentile``
+    ``.zestimate_valuation_range_high``
+    ``.zestimate_valuation_range_low``
+    ``.zestimate_value_change``
+    ``.zillow_id``
     """
     attribute_mapping = {
         'zillow_id': 'result/zpid',
@@ -288,46 +287,46 @@ class GetDeepSearchResults(ZillowResults):
 class GetUpdatedPropertyDetails(ZillowResults):
     """Maps results from the XML data array into attributes of an instance of GetUpdatedPropertyDetails.
     An instance of ``GetDeepSearchResults`` has the following attributes:
-    ``.zillow_id``
-    ``.home_type``
-    ``.home_detail_link``
-    ``.graph_data_link``
-    ``.map_this_home_link``
-    ``.latitude``
-    ``.longitude``
-    ``.tax_year``
-    ``.tax_value``
-    ``.year_built``
-    ``.property_size``
-    ``.home_size``
-    ``.bathrooms``
-    ``.bedrooms``
-    ``.last_sold_date``
-    ``.last_sold_price``
-    ``.photo_gallery``
-    ``.home_info``
-    ``.year_updated``
-    ``.floor_material``
-    ``.num_floors``
-    ``.basement``
-    ``.roof``
-    ``.view``
-    ``.parking_type``
-    ``.heating_sources``
-    ``.heating_system``
-    ``.rooms``
-    ``.num_rooms``
-    ``.appliances``
-    ``.neighborhood``
-    ``.school_district``
-    ``.elementary_school``
-    ``.middle_school``
-    ``.home_description``
-    ``.posting_status``
-    ``.posting_type``
     ``.agent_name``
     ``.agent_profile_url``
+    ``.appliances``
+    ``.basement``
+    ``.bathrooms``
+    ``.bedrooms``
     ``.brokerage``
+    ``.elementary_school``
+    ``.floor_material``
+    ``.graph_data_link``
+    ``.heating_sources``
+    ``.heating_system``
+    ``.home_description``
+    ``.home_detail_link``
+    ``.home_info``
+    ``.home_size``
+    ``.home_type``
+    ``.last_sold_date``
+    ``.last_sold_price``
+    ``.latitude``
+    ``.longitude``
+    ``.map_this_home_link``
+    ``.middle_school``
+    ``.neighborhood``
+    ``.num_floors``
+    ``.num_rooms``
+    ``.parking_type``
+    ``.photo_gallery``
+    ``.posting_status``
+    ``.posting_type``
+    ``.property_size``
+    ``.roof``
+    ``.rooms``
+    ``.school_district``
+    ``.tax_value``
+    ``.tax_year``
+    ``.view``
+    ``.year_built``
+    ``.year_updated``
+    ``.zillow_id``
     """
     attribute_mapping = {
         # attributes in common with GetDeepSearchResults

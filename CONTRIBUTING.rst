@@ -1,8 +1,7 @@
-============
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every
+Contributions are greatly appreciated! Every
 little bit helps, and credit will always be given. 
 
 You can contribute in many ways:
@@ -55,7 +54,7 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `pyzillow` for
+Ready to contribute? Here's how to set up PyZillow for
 local development.
 
 1. Fork_ the `pyzillow` repo on GitHub.
@@ -99,11 +98,3 @@ Check that your pull request meets these guidelines before you submit it:
    Check https://travis-ci.org/hanneshapke/pyzillow 
    under pull requests for active pull requests or run the ``tox`` command and
    make sure that the tests pass for all supported Python versions.
-
-
-Tips
-----
-
-To run a subset of tests::
-
-	 $ py.test test/test_pyzillow.py

@@ -6,17 +6,22 @@
 PyZillow
 ========
 
-A python library to access the Zillow APIs
-------------------------------------------
+A Python library to access the Zillow API
+-----------------------------------------
 
-PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm).
+PyZillow is a Python wrapper for `Zillow's API <http://www.zillow.com/howto/api/APIOverview.htm>`_. With PyZillow, you can use a physical address or a Zillow ID to access real estate data from the Zillow database.
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
 
-With PyZillow, you are able to directly convert an address/zipcode (GetDeepSearchResults API) or Zillow ID (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
-
 Contents:
 =========
+
+This documentation describes how to use PyZillow to access data through the Zillow API in Python.
+You will learn how to install PyZillow, initialize the API wrapper with the ZillowConnect class,
+and how to use the classes GetDeepSearchResults and GetUpdatedPropertyDetails to request and parse
+data from the Zillow API. This documentation also includes information about contributing to PyZillow
+and how to send feedback to the developers.
+
 
 .. toctree::
    :maxdepth: 2

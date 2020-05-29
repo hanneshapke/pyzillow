@@ -4,7 +4,7 @@ Installation
 
 Install PyZillow
 ****************
-At the command line via pip (PyPI)::
+Use ``pip`` on a command line to download PyZillow from PyPI and install it on your system::
 
     $ pip install pyzillow
 
