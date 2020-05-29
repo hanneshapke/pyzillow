@@ -1,11 +1,9 @@
 PyZillow 0.5.5
 ==================
 
-PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm).
+PyZillow is a Python wrapper for Zillow's API (http://www.zillow.com/howto/api/APIOverview.htm). With PyZillow, you can directly convert a physical address or a Zillow ID into real estate data from the Zillow database.
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
-
-With PyZillow, you are able to directly convert an address/zipcode (GetDeepSearchResults API) or Zillow ID (GetUpdatedPropertyDetails API) into real estate data from the Zillow database.
 
 **Documentation available here**: http://pyzillow.readthedocs.org/en/latest/
 
@@ -18,4 +16,4 @@ Contributors
 * Miguel Paolino <miguel@renooble.com>
 * Timo Cornelius Metzger <pyzillow@tcmetzger.net>
 
-PyZillow was originally developed by Hannes Hapke & Miguel Paolino for [renooble.com](http://www.renooble.com)
+PyZillow was originally developed by Hannes Hapke and Miguel Paolino for `renooble.com <http://www.renooble.com>`_.
