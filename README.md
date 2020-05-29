@@ -16,4 +16,4 @@ Contributors
 * Miguel Paolino <miguel@renooble.com>
 * Timo Cornelius Metzger <pyzillow@tcmetzger.net>
 
-PyZillow was originally developed by Hannes Hapke and Miguel Paolino for [renooble.com](http://www.renooble.com)
+PyZillow was originally developed by Hannes Hapke and Miguel Paolino for [renooble.com](http://www.renooble.com).
