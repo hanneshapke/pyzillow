@@ -15,7 +15,7 @@ To be able to communicate with the API, you first need to initialize a ZillowWra
 Accessing the GetDeepSearchResults API
 **************************************
 The GetDeepSearchResults API queries the Zillow database for information on a specific address. The endpoint requires the following arguments:
-    
+
 * A street address (e.g. ``'2114 Bigelow Ave'``)
 * A ZIP code or city and state combination (e.g. ``'98109'`` or ``'Seattle, WA'``)
 * Optional: Enabling or disabling Zillow Rentzestimate information in API results (``True``/``False``)
@@ -65,7 +65,7 @@ Access the information by reading the ``GetDeepSearchResults`` object's attribut
 
 Accessing the GetUpdatedPropertyDetails API
 *******************************************
-The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. To find this identifier, you can read the attribute ``.zillow_id`` of a GetDeepSearchResults object. 
+The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. To find this identifier, you can read the attribute ``.zillow_id`` of a GetDeepSearchResults object.
 
 Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``. However, it does not include Zestimate or Rentzestimate information.
 

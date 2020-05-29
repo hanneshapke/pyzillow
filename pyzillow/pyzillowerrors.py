@@ -2,7 +2,7 @@ import sys
 
 
 class ZillowError(Exception):
-    """A ZillowError exception is raised if the API endpoint responded 
+    """A ZillowError exception is raised if the API endpoint responded
     with an error code (http://www.zillow.com/howto/api/GetDeepSearchResults.htm).
     """
 
@@ -119,7 +119,8 @@ class ZillowError(Exception):
 
 
 class ZillowFail(Exception):
-    """A ZillowFail exception is raised if the API endpoint could not be reached or the request did not return valid XML.
+    """A ZillowFail exception is raised if the API endpoint could not be reached or
+       the request did not return valid XML.
     """
 
     def __init__(self):

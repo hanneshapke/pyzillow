@@ -1,7 +1,7 @@
 Contributing
 ============
 
-Contributions are greatly appreciated! Every little bit helps, and credit will always be given. 
+Contributions are greatly appreciated! Every little bit helps, and credit will always be given.
 
 You can contribute in many ways:
 
@@ -34,7 +34,7 @@ is open to whoever wants to implement it.
 Writing documentation
 ~~~~~~~~~~~~~~~~~~~~~
 
-PyZillow could always use more documentation, whether as part of the 
+PyZillow could always use more documentation, whether as part of the
 official PyZillow docs, in docstrings, or even on the web in blog posts,
 articles, or tweets.
 
@@ -94,7 +94,7 @@ Check that your pull request meets these guidelines before you submit it:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work with Python 3.6, 3.7 and 3.8.
-   Check https://travis-ci.org/hanneshapke/pyzillow 
+   Check https://travis-ci.org/hanneshapke/pyzillow
    under pull requests for active pull requests or run the ``tox`` command and
    make sure that the tests pass for all supported Python versions.
 
