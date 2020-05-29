@@ -79,7 +79,7 @@ class ZillowWrapper(object):
             )
             raise ZillowFail
 
-        if response.findall('message/code')[0].text is not '0':
+        if response.findall('message/code')[0].text != '0':
             raise ZillowError(int(response.findall('message/code')[0].text))
         else:
             if not response.findall('response'):

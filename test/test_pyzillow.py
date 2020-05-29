@@ -2,12 +2,8 @@
 Tests for `pyzillow` module.
 """
 
-import os
-
 import pytest
-import requests
 import responses
-from mock import Mock, patch
 
 from api_responses import (APIReponses, set_get_deep_search_response,
                            set_updated_property_details_response)
