@@ -3,6 +3,12 @@
 History
 -------
 
+0.6.0 (2020-05-28)
+++++++++++++++++++
+
+* Updated tests, incl. complete API mocking
+* Updated test dependencies
+
 0.5.0 (2015-09-12)
 ++++++++++++++++++
 
