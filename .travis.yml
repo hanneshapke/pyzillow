@@ -20,6 +20,7 @@ script:
 deploy:
   provider: pypi
   distributions: "sdist bdist_wheel"
+  username: "hanneshapke"
   on:
     branch: master
     # tags: true
