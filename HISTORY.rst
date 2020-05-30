@@ -3,9 +3,17 @@
 Version history
 ---------------
 
-0.6.1 (2020-05-28)
+
+0.7.0 (2020-05-30)
 ++++++++++++++++++
-* Updated error handling, too many request error, Github issue 18
+
+* * Updated error handling, too many request error, Github issue 18
+* Pinned python-coveralls to latest version 2.9.3 #27
+* Added `zestimate_valuation_range_low` as an attribute GetDeepSearchResults. `zestimate_valuationRange_low` was deprecated. ()
+* Added posting details to GetUpdatedPropertyDetails result (#10)
+
+Thanks to Alexandra M. Chace, Marilyn Chace, Evan Pete Walsh, Stephen Holsapple
+
 
 0.6.0 (2020-05-28)
 ++++++++++++++++++

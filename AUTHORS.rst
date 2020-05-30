@@ -2,6 +2,12 @@
 Credits
 =======
 
+Maintainers
+------------
+* Timo Cornelius Metzger <pyzillow@tcmetzger.net>
+* Hannes Hapke <hannes@renooble.com>
+
+
 Contributors
 ------------
 
