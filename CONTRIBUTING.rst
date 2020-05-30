@@ -38,7 +38,7 @@ PyZillow could always use more documentation, whether as part of the
 official PyZillow docs, in docstrings, or even on the web in blog posts,
 articles, or tweets.
 
-Submitzing feedback
+Submitting feedback
 ~~~~~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at https://github.com/hanneshapke/pyzillow/issues.
@@ -50,7 +50,7 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-Geting started
+Getting started
 --------------
 
 Ready to contribute? Here's how to set up PyZillow for
