@@ -11,12 +11,12 @@ The ``ZillowWrapper`` class
     :undoc-members:
 
 The ``GetDeepSearchResults`` class
-***************************
+**********************************
 .. autoclass:: pyzillow.pyzillow.GetDeepSearchResults
     :show-inheritance:
 
 The ``GetUpdatedPropertyDetails`` class
-***************************
+***************************************
 .. autoclass:: pyzillow.pyzillow.GetUpdatedPropertyDetails
     :members:
     :show-inheritance:
