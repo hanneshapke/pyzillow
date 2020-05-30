@@ -315,8 +315,12 @@ class GetUpdatedPropertyDetails(ZillowResults):
     ``.num_rooms``
     ``.parking_type``
     ``.photo_gallery``
+    ``.posting_agent``
+    ``.posting_last_update``
+    ``.posting_mls``
     ``.posting_status``
     ``.posting_type``
+    ``.price``
     ``.property_size``
     ``.roof``
     ``.rooms``
@@ -331,48 +335,52 @@ class GetUpdatedPropertyDetails(ZillowResults):
 
     attribute_mapping = {
         # attributes in common with GetDeepSearchResults
-        "zillow_id": "zpid",
-        "home_type": "editedFacts/useCode",
-        "home_detail_link": "links/homeDetails",
-        "graph_data_link": "",
-        "map_this_home_link": "",
-        "latitude": "address/latitude",
-        "longitude": "address/longitude",
-        "tax_year": "",
-        "tax_value": "",
-        "year_built": "editedFacts/yearBuilt",
-        "property_size": "editedFacts/lotSizeSqFt",
-        "home_size": "editedFacts/finishedSqFt",
         "bathrooms": "editedFacts/bathrooms",
         "bedrooms": "editedFacts/bedrooms",
+        "graph_data_link": "",
+        "home_detail_link": "links/homeDetails",
+        "home_size": "editedFacts/finishedSqFt",
+        "home_type": "editedFacts/useCode",
         "last_sold_date": "",
         "last_sold_price": "",
+        "latitude": "address/latitude",
+        "longitude": "address/longitude",
+        "map_this_home_link": "",
+        "property_size": "editedFacts/lotSizeSqFt",
+        "tax_value": "",
+        "tax_year": "",
+        "year_built": "editedFacts/yearBuilt",
+        "zillow_id": "zpid",
         # new attributes in GetUpdatedPropertyDetails
-        "photo_gallery": "links/photoGallery",
-        "home_info": "links/homeInfo",
-        "year_updated": "editedFacts/yearUpdated",
-        "floor_material": "editedFacts/floorCovering",
-        "num_floors": "editedFacts/numFloors",
-        "basement": "editedFacts/basement",
-        "roof": "editedFacts/roof",
-        "view": "editedFacts/view",
-        "parking_type": "editedFacts/parkingType",
-        "heating_sources": "editedFacts/heatingSources",
-        "heating_system": "editedFacts/heatingSystem",
-        "rooms": "editedFacts/rooms",
-        "num_rooms": "editedFacts/numRooms",
-        "appliances": "editedFacts/appliances",
-        "neighborhood": "neighborhood",
-        "school_district": "schoolDistrict",
-        "elementary_school": "elementarySchool",
-        "middle_school": "middleSchool",
-        "school_district": "schoolDistrict",
-        "home_description": "homeDescription",
-        "posting_status": "posting/status",
-        "posting_type": "posting/type",
         "agent_name": "posting/agentName",
         "agent_profile_url": "posting/agentProfileUrl",
+        "appliances": "editedFacts/appliances",
+        "basement": "editedFacts/basement",
         "brokerage": "posting/brokerage",
+        "elementary_school": "elementarySchool",
+        "floor_material": "editedFacts/floorCovering",
+        "heating_sources": "editedFacts/heatingSources",
+        "heating_system": "editedFacts/heatingSystem",
+        "home_description": "homeDescription",
+        "home_info": "links/homeInfo",
+        "middle_school": "middleSchool",
+        "neighborhood": "neighborhood",
+        "num_floors": "editedFacts/numFloors",
+        "num_rooms": "editedFacts/numRooms",
+        "parking_type": "editedFacts/parkingType",
+        "photo_gallery": "links/photoGallery",
+        "posting_agent": "posting/agentName",
+        "posting_last_update": "posting/lastUpdatedDate",
+        "posting_mls": "posting/mls",
+        "posting_status": "posting/status",
+        "posting_type": "posting/type",
+        "price": "price",
+        "roof": "editedFacts/roof",
+        "rooms": "editedFacts/rooms",
+        "school_district": "schoolDistrict",
+        "school_district": "schoolDistrict",
+        "view": "editedFacts/view",
+        "year_updated": "editedFacts/yearUpdated",
     }
 
     def __init__(self, data, *args, **kwargs):
