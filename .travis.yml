@@ -22,8 +22,8 @@ deploy:
   distributions: "sdist bdist_wheel"
   username: "hanneshapke"
   on:
-    branch: master
-    # tags: true
+    tags: true
+    # branch: master
 
 after_success:
   - coveralls
