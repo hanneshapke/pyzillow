@@ -1,6 +1,3 @@
-import sys
-
-
 class ZillowError(Exception):
     """A ZillowError exception is raised if the API endpoint responded
     with an error code (http://www.zillow.com/howto/api/GetDeepSearchResults.htm).
@@ -37,6 +34,7 @@ class ZillowError(Exception):
                 + "The Zillow Web Service is currently not available. "
                 + "Please come back later and try again.",
             ),
+            (7, "Too many requests. \n" + "Daily requests exceeded.",),
             (
                 500,
                 "Invalid or missing address parameter.\n"
@@ -104,18 +102,8 @@ class ZillowError(Exception):
         self.url = url
         self.response = response
 
-    def __unicode__(self):
+    def __str__(self):
         return self.message
-
-    if sys.version_info[0] >= 3:  # Python 3
-
-        def __str__(self):
-            return self.__unicode__()
-
-    else:  # Python 2
-
-        def __str__(self):
-            return self.__unicode__().encode("utf8")
 
 
 class ZillowFail(Exception):
