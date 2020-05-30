@@ -1,11 +1,12 @@
 # Config file for automatic testing at travis-ci.org
-
+dist: xenial
 language: python
-
+sudo: false
 python:
-  - "3.6"
-  - "3.7"
-  - "3.8"
+  - '3.5'
+  - '3.6'
+  - '3.7'
+  - '3.8'
 
 install:
   - pip install -U -r requirements/requirements.txt
@@ -15,6 +16,13 @@ install:
 # command to run tests, e.g. python setup.py test
 script:
   - pytest . --cov-report term-missing  --cov pyzillow test/
+
+deploy:
+  provider: pypi
+  distributions: "sdist bdist_wheel"
+  on:
+    branch: master
+    # tags: true
 
 after_success:
   - coveralls
