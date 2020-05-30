@@ -26,12 +26,12 @@ doclink = """
 Documentation
 -------------
 
-The full documentation is at http://pyzillow.rtfd.org."""
+The full documentation is at https://pyzillow.readthedocs.io/."""
 history = open("HISTORY.rst").read().replace(".. :changelog:", "")
 
 setup(
     name="pyzillow",
-    version="0.6.0",
+    version="0.6.1",
     description="Python API wrapper for Zillow's API",
     long_description=readme + "\n\n" + doclink + "\n\n" + history,
     author="Hannes Hapke",
@@ -43,14 +43,14 @@ setup(
     install_requires=["requests"],
     license="MIT",
     zip_safe=False,
-    keywords="pyzillow",
+    keywords=["pyzillow", "zillow", "api", "real estate"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
-        "Programming Language :: Python :: 2.6",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
 )
