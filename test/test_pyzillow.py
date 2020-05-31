@@ -180,7 +180,9 @@ class TestPyzillow(object):
         zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
 
         with pytest.raises(ZillowError) as excinfo:
-            zillow_data.get_deep_search_results(address=self.address, zipcode=self.zipcode)
+            zillow_data.get_deep_search_results(
+                address=self.address, zipcode=self.zipcode
+            )
         error_msg = "Status 6: This account is not authorized to execute this API call"
         assert error_msg in str(excinfo.value)
 
