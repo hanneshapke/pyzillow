@@ -36,7 +36,7 @@ class ZillowWrapper(object):
            (:class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`) which requires a
            Zillow Property ID (ZPID) as an argument. You can acquire this identifier by
            accessing ``.zillow_id`` from a :class:`pyzillow.pyzillow.GetDeepSearchResults`
-           object.
+           object. GetUpdatedPropertyDetails data is not available for all valid Zillow IDs.
 
             Example:
 
@@ -300,7 +300,7 @@ class GetUpdatedPropertyDetails(ZillowResults):
     """Maps results from the XML data array into attributes of an instance of
        GetUpdatedPropertyDetails.
 
-    An instance of ``GetDeepSearchResults`` has the following attributes:
+    An instance of ``GetUpdatedPropertyDetails`` has the following attributes:
     ``.agent_name``
     ``.agent_profile_url``
     ``.appliances``
