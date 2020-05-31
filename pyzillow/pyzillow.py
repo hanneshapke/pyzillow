@@ -7,8 +7,7 @@ from . import __version__
 
 
 class ZillowWrapper(object):
-    """This class provides an interface into the Zillow API. An API key is required to
-       create an instance of this class:
+    """This class provides an interface into the Zillow API. An API key is required to create an instance of this class:
 
     >>> from pyzillow.pyzillow import ZillowWrapper
     >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
@@ -55,8 +54,7 @@ class ZillowWrapper(object):
     def get_deep_search_results(
         self, address: str, zipcode: str, rentzestimate: bool = False
     ):
-        """This method provides results from the GetDeepSearchResults API endpoint
-           as an XML object.
+        """This method provides results from the GetDeepSearchResults API endpoint as an XML object.
 
         :param address: Street address to look up
         :type address: str
@@ -79,8 +77,7 @@ class ZillowWrapper(object):
         return self.get_data(url, params)
 
     def get_updated_property_details(self, zpid: str):
-        """This method provides results from the GetUpdatedPropertyDetails API endpoint
-           as an XML object.
+        """This method provides results from the GetUpdatedPropertyDetails API endpoint as an XML object.
 
         :param zpid: Zillow Web Service Identifier
         :type zpid: str
@@ -93,8 +90,7 @@ class ZillowWrapper(object):
         return self.get_data(url, params)
 
     def get_data(self, url: str, params: dict):
-        """This method requests data from the API endpoint specified in the url argument.
-           It uses parameters from the params argument.
+        """This method requests data from the API endpoint specified in the url argument. It uses parameters from the params argument.
 
         :param url: URL of API endpoint
         :type url: str
@@ -178,8 +174,7 @@ class ZillowResults(object):
 
 
 class GetDeepSearchResults(ZillowResults):
-    """Maps results from the XML data array into attributes of an instance of
-       GetDeepSearchResults.
+    """Maps results from the XML data array into attributes of an instance of GetDeepSearchResults.
 
     An instance of ``GetDeepSearchResults`` has the following attributes:
     ``.bathrooms``
@@ -297,8 +292,7 @@ class GetDeepSearchResults(ZillowResults):
 
 
 class GetUpdatedPropertyDetails(ZillowResults):
-    """Maps results from the XML data array into attributes of an instance of
-       GetUpdatedPropertyDetails.
+    """Maps results from the XML data array into attributes of an instance of GetUpdatedPropertyDetails.
 
     An instance of ``GetUpdatedPropertyDetails`` has the following attributes:
     ``.agent_name``
