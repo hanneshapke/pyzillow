@@ -184,6 +184,8 @@ class GetDeepSearchResults(ZillowResults):
     An instance of ``GetDeepSearchResults`` has the following attributes:
     ``.bathrooms``
     ``.bedrooms``
+    ``.city``
+    ``.fips_county``
     ``.graph_data_link``
     ``.home_detail_link``
     ``.home_size``
@@ -199,8 +201,12 @@ class GetDeepSearchResults(ZillowResults):
     ``.rentzestimate_valuation_range_high``
     ``.rentzestimate_valuation_range_low``
     ``.rentzestimate_value_change``
+    ``.state``
+    ``.street``
     ``.tax_value``
     ``.tax_year``
+    ``.total_rooms``
+    ``.use_Code``
     ``.year_built``
     ``.zestimate_amount``
     ``.zestimate_last_updated``
@@ -209,6 +215,7 @@ class GetDeepSearchResults(ZillowResults):
     ``.zestimate_valuation_range_low``
     ``.zestimate_value_change``
     ``.zillow_id``
+    ``.zipcode``
     """
 
     attribute_mapping = {
@@ -217,8 +224,14 @@ class GetDeepSearchResults(ZillowResults):
         "home_detail_link": "result/links/homedetails",
         "graph_data_link": "result/links/graphsanddata",
         "map_this_home_link": "result/links/mapthishome",
+        "street": "result/address/street",
+        "city": "result/address/city",
+        "state": "result/address/state",
+        "zipcode": "result/address/zipcode",
         "latitude": "result/address/latitude",
         "longitude": "result/address/longitude",
+        "fips_county": "result/FIPScounty",
+        "use_Code": "result/useCode",
         "tax_year": "result/taxAssessmentYear",
         "tax_value": "result/taxAssessment",
         "year_built": "result/yearBuilt",
@@ -226,6 +239,7 @@ class GetDeepSearchResults(ZillowResults):
         "home_size": "result/finishedSqFt",
         "bathrooms": "result/bathrooms",
         "bedrooms": "result/bedrooms",
+        "total_rooms": "result/totalRooms",
         "last_sold_date": "result/lastSoldDate",
         "last_sold_price": "result/lastSoldPrice",
         "zestimate_amount": "result/zestimate/amount",
@@ -294,25 +308,27 @@ class GetUpdatedPropertyDetails(ZillowResults):
     ``.bathrooms``
     ``.bedrooms``
     ``.brokerage``
+    ``.city``
+    ``.cooling_system``
     ``.elementary_school``
+    ``.exterior_material``
     ``.floor_material``
-    ``.graph_data_link``
     ``.heating_sources``
     ``.heating_system``
+    ``.high_school``
     ``.home_description``
     ``.home_detail_link``
     ``.home_info``
     ``.home_size``
     ``.home_type``
-    ``.last_sold_date``
-    ``.last_sold_price``
     ``.latitude``
     ``.longitude``
-    ``.map_this_home_link``
     ``.middle_school``
     ``.neighborhood``
     ``.num_floors``
     ``.num_rooms``
+    ``.page_view_count_this_month``
+    ``.page_view_count_total``
     ``.parking_type``
     ``.photo_gallery``
     ``.posting_agent``
@@ -325,44 +341,49 @@ class GetUpdatedPropertyDetails(ZillowResults):
     ``.roof``
     ``.rooms``
     ``.school_district``
-    ``.tax_value``
-    ``.tax_year``
+    ``.state``
+    ``.street``
     ``.view``
     ``.year_built``
     ``.year_updated``
     ``.zillow_id``
+    ``.zipcode``
     """
 
     attribute_mapping = {
         # attributes in common with GetDeepSearchResults
         "bathrooms": "editedFacts/bathrooms",
         "bedrooms": "editedFacts/bedrooms",
-        "graph_data_link": "",
         "home_detail_link": "links/homeDetails",
         "home_size": "editedFacts/finishedSqFt",
         "home_type": "editedFacts/useCode",
-        "last_sold_date": "",
-        "last_sold_price": "",
+        "street": "result/address/street",
+        "city": "result/address/city",
+        "state": "result/address/state",
+        "zipcode": "result/address/zipcode",
         "latitude": "address/latitude",
         "longitude": "address/longitude",
-        "map_this_home_link": "",
         "property_size": "editedFacts/lotSizeSqFt",
-        "tax_value": "",
-        "tax_year": "",
         "year_built": "editedFacts/yearBuilt",
         "zillow_id": "zpid",
         # new attributes in GetUpdatedPropertyDetails
+        "page_view_count_this_month": "pageViewCount/currentMonth",
+        "page_view_count_total": "pageViewCount/total",
         "agent_name": "posting/agentName",
         "agent_profile_url": "posting/agentProfileUrl",
         "appliances": "editedFacts/appliances",
         "basement": "editedFacts/basement",
         "brokerage": "posting/brokerage",
+        "cooling_system": "editedFacts/coolingSystem",
         "elementary_school": "elementarySchool",
+        "exterior_material": "editedFacts/exteriorMaterial",
         "floor_material": "editedFacts/floorCovering",
         "heating_sources": "editedFacts/heatingSources",
         "heating_system": "editedFacts/heatingSystem",
+        "high_school": "highSchool",
         "home_description": "homeDescription",
         "home_info": "links/homeInfo",
+        "photo_gallery": "links/photoGallery",
         "middle_school": "middleSchool",
         "neighborhood": "neighborhood",
         "num_floors": "editedFacts/numFloors",
@@ -377,7 +398,6 @@ class GetUpdatedPropertyDetails(ZillowResults):
         "price": "price",
         "roof": "editedFacts/roof",
         "rooms": "editedFacts/rooms",
-        "school_district": "schoolDistrict",
         "school_district": "schoolDistrict",
         "view": "editedFacts/view",
         "year_updated": "editedFacts/yearUpdated",
