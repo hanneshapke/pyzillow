@@ -9,6 +9,7 @@ XML_RESPONSE = {
     "get_deep_search_200_ok": "get_deep_search_200_ok.xml",
     "updated_property_details_200_ok": "updated_property_details_200_ok.xml",
     "error_2_zwsid_missing": "error_2_zwsid_missing.xml",
+    "error_6_account_not_authorized": "error_6_account_not_authorized.xml",
     "error_500_no_address_provided": "error_500.xml",
     "error_501_no_city_state": "error_501.xml",
     "error_508_invalid_address": "error_508_invalid_address.xml",
