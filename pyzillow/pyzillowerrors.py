@@ -34,7 +34,14 @@ class ZillowError(Exception):
                 + "The Zillow Web Service is currently not available. "
                 + "Please come back later and try again.",
             ),
-            (7, "Too many requests. \n" + "Daily requests exceeded.",),
+            (
+                6,
+                "This account is not authorized to execute this API call."
+            ),
+            (
+                7, 
+                "Too many requests. \n" + "Daily requests exceeded.",
+            ),
             (
                 500,
                 "Invalid or missing address parameter.\n"
