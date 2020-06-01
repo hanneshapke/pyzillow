@@ -96,7 +96,7 @@ Check that your pull request meets these guidelines before you submit it:
    docstrings with your new functionality (`Sphinx <https://www.sphinx-doc.org/en/stable/usage/extensions/autodoc.html>`_ reStructuredText) and check if you
    need to update the information in the /docs/ folder.
 3. The pull request should work with Python 3.6, 3.7 and 3.8. Make sure that
-   all tests run by pytest pass. 
+   all tests run by pytest pass.
 
 Running a subset of tests
 -------------------------
