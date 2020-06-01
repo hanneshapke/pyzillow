@@ -2,11 +2,8 @@ PyZillow 0.6
 ============
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pyzillow)
-
 [![Build Status](https://travis-ci.com/hanneshapke/pyzillow.svg?branch=master)](https://travis-ci.com/hanneshapke/pyzillow)
-
 [![Documentation Status](https://readthedocs.org/projects/pyzillow/badge/?version=latest)](https://pyzillow.readthedocs.io/en/latest/?badge=latest)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 

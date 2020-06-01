@@ -3,14 +3,11 @@ PyZillow 0.6
 
 .. image:: https://img.shields.io/pypi/dm/pyzillow.svg   :alt: PyPI - Downloads
   :target: https://pypistats.org/packages/pyzillow
-
 .. image:: https://travis-ci.com/hanneshapke/pyzillow.svg?branch=master
   :target: https://travis-ci.com/hanneshapke/pyzillow
-
 .. image:: https://readthedocs.org/projects/pyzillow/badge/?version=latest
 :target: https://pyzillow.readthedocs.io/en/latest/?badge=latest
 :alt: Documentation Status
-
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
   :target: https://opensource.org/licenses/MIT
 
