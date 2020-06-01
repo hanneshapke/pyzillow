@@ -1,14 +1,38 @@
 PyZillow 0.6
 ============
 
+.. image:: https://img.shields.io/pypi/dm/pyzillow.svg   :alt: PyPI - Downloads
+  :target: https://pypistats.org/packages/pyzillow
+
+.. image:: https://travis-ci.com/hanneshapke/pyzillow.svg?branch=master
+  :target: https://travis-ci.com/hanneshapke/pyzillow
+
+.. image:: https://readthedocs.org/projects/pyzillow/badge/?version=latest
+:target: https://pyzillow.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+  :target: https://opensource.org/licenses/MIT
+
 PyZillow is a Python wrapper for `Zillow's API <http://www.zillow.com/howto/api/APIOverview.htm>`_. With PyZillow, you can use a physical address or a Zillow ID to access real estate data from the Zillow database.
 
 Currently, PyZillow supports the **GetDeepSearchResults** and **GetUpdatedPropertyDetails** API endpoints.
+
+Status
+------
+
+PyZillow is now being actively updated again. Please allow us some time
+to work through existing pull requests and issues.
 
 Documentation
 -------------
 
 The PyZillow documentation is available here: http://pyzillow.readthedocs.org/en/latest/
+
+Maintainers
+------------
+* Timo Cornelius Metzger <pyzillow@tcmetzger.net>
+* Hannes Hapke <hannes@renooble.com>
 
 Contributors
 ------------
