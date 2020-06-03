@@ -22,7 +22,7 @@ If you are reporting a bug, please include:
 Fixing bugs
 ~~~~~~~~~~~
 
-Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
+Fixes are always welcome! Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
 is open to whoever wants to fix it.
 
 Implementing features
@@ -65,6 +65,10 @@ Clone your fork locally::
 Create a branch for local development::
 
    $ git checkout -b name-of-your-bugfix-or-feature
+
+Create a virtualenv to separate your Python dependencies:
+
+   $ virtualenv .pyzillow-env && source .pyzillow-env/bin/activate
 
 Configure development requirements::
 
