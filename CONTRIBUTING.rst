@@ -22,7 +22,7 @@ If you are reporting a bug, please include:
 Fixing bugs
 ~~~~~~~~~~~
 
-Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
+Fixes are always welcome! Look through the `GitHub issues <https://github.com/hanneshapke/pyzillow/issues>`_ for bugs. Anything tagged with "bug"
 is open to whoever wants to fix it.
 
 Implementing features
@@ -51,38 +51,44 @@ If you are proposing a feature:
   are welcome :)
 
 Getting started
---------------
+---------------
 
 Ready to contribute? Here's how to set up PyZillow for
 local development.
 
-1. Fork_ the `pyzillow` repo on GitHub.
-2. Clone your fork locally::
+Fork_ the `pyzillow` repo on GitHub.
 
-        $ git clone git@github.com:hanneshapke/pyzillow.git
+Clone your fork locally::
 
-3. Create a branch for local development::
+   $ git clone git@github.com:hanneshapke/pyzillow.git
 
-        $ git checkout -b name-of-your-bugfix-or-feature
+Create a branch for local development::
+
+   $ git checkout -b name-of-your-bugfix-or-feature
+
+Create a virtualenv to separate your Python dependencies:
+
+   $ virtualenv .pyzillow-env && source .pyzillow-env/bin/activate
+
+Configure development requirements::
+
+   $ make develop
 
 Now you can make your changes locally.
 
-4. When you're done making changes, use ``tox`` to check that your changes pass style and unit
-   tests, including testing other Python versions::
+When you're done making changes, use `Pytest <https://docs.pytest.org/en/latest/>`_ to check that your changes pass style and unit tests, including testing other Python versions. You can run all tests by running pytest::
 
-    $ tox
+    $ pytest
 
-To get tox, just pip install it.
+Please lint your code before committing your changes::
 
-5. Commit your changes and push your branch to GitHub::
+   $ make lint
+
+Commit your changes and push your branch to GitHub::
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
-
-6. Submit a pull request through the GitHub website.
-
-.. _Fork: https://github.com/hanneshapke/pyzillow/fork
 
 Submitting a pull request
 -------------------------
@@ -90,16 +96,15 @@ Submitting a pull request
 Check that your pull request meets these guidelines before you submit it:
 
 1. The pull request should include tests.
-2. If the pull request adds functionality, the docs have to be updated. Put
-   your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
-3. The pull request should work with Python 3.6, 3.7 and 3.8.
-   Check https://travis-ci.org/hanneshapke/pyzillow
-   under pull requests for active pull requests or run the ``tox`` command and
-   make sure that the tests pass for all supported Python versions.
+2. If the pull request adds functionality, the docs need to be updated. Include
+   docstrings with your new functionality (`Sphinx <https://www.sphinx-doc.org/en/stable/usage/extensions/autodoc.html>`_ reStructuredText) and check if you
+   need to update the information in the /docs/ folder.
+3. The pull request should work with Python 3.6, 3.7 and 3.8. Make sure that
+   all tests run by pytest pass.
 
 Running a subset of tests
 -------------------------
-Use pytest in case you want to run a subset of tests::
+Use pytest in combination with a substring in case you want to run only specific tests instead of all available tests.
+pytest will only run tests with names matching the substring::
 
-    $ pytest test/test_pyzillow.py
+    $ pytest -k <substring> -v
