@@ -66,7 +66,7 @@ Create a branch for local development::
 
    $ git checkout -b name-of-your-bugfix-or-feature
 
-Create a virtualenv to separate your Python dependencies:
+Create a virtualenv to separate your Python dependencies::
 
    $ virtualenv .pyzillow-env && source .pyzillow-env/bin/activate
 
