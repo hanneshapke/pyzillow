@@ -30,6 +30,8 @@ To query the GetDeepSearchResults API:
 An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.bathrooms``
 ``.bedrooms``
+``.city``
+``.fips_county``
 ``.graph_data_link``
 ``.home_detail_link``
 ``.home_size``
@@ -45,8 +47,12 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.rentzestimate_valuation_range_high``
 ``.rentzestimate_valuation_range_low``
 ``.rentzestimate_value_change``
+``.state``
+``.street``
 ``.tax_value``
 ``.tax_year``
+``.total_rooms``
+``.use_code``
 ``.year_built``
 ``.zestimate_amount``
 ``.zestimate_last_updated``
@@ -55,6 +61,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.zestimate_valuation_range_low``
 ``.zestimate_value_change``
 ``.zillow_id``
+``.zipcode``
 
 Access the information by reading the ``GetDeepSearchResults`` object's attributes. For example:
 
@@ -67,7 +74,8 @@ Accessing the GetUpdatedPropertyDetails API
 *******************************************
 The GetUpdatedPropertyDetails API endpoint requires a Zillow Property ID (ZPID) as an argument. To find this identifier, you can read the attribute ``.zillow_id`` of a GetDeepSearchResults object.
 
-Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``. However, it does not include Zestimate or Rentzestimate information.
+Compared to the GetDeepSearchResults API endpoint described above, the GetUpdatedPropertyDetails API endpoint delivers more details about the object, such as ``.heating_system`` or ``.school_district``.
+However, GetUpdatedPropertyDetails data is not available for all valid Zillow Property IDs.
 
 To query the GetUpdatedPropertyDetails API:
 
@@ -84,39 +92,46 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.bathrooms``
 ``.bedrooms``
 ``.brokerage``
+``.city``
+``.cooling_system``
 ``.elementary_school``
+``.exterior_material``
 ``.floor_material``
-``.graph_data_link``
 ``.heating_sources``
 ``.heating_system``
+``.high_school``
 ``.home_description``
 ``.home_detail_link``
 ``.home_info``
 ``.home_size``
 ``.home_type``
-``.last_sold_date``
-``.last_sold_price``
 ``.latitude``
 ``.longitude``
-``.map_this_home_link``
 ``.middle_school``
 ``.neighborhood``
 ``.num_floors``
 ``.num_rooms``
+``.page_view_count_this_month``
+``.page_view_count_total``
 ``.parking_type``
 ``.photo_gallery``
+``.posting_agent``
+``.posting_last_update``
+``.posting_mls``
 ``.posting_status``
 ``.posting_type``
+``.price``
 ``.property_size``
 ``.roof``
 ``.rooms``
 ``.school_district``
-``.tax_value``
-``.tax_year``
+``.state``
+``.street``
 ``.view``
 ``.year_built``
 ``.year_updated``
 ``.zillow_id``
+``.zipcode``
 
 Access the information by reading the ``GetUpdatedPropertyDetails`` object's attributes. For example:
 

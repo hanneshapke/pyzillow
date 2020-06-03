@@ -167,6 +167,26 @@ class TestPyzillow(object):
         assert error_msg in str(excinfo.value)
 
     @responses.activate
+    def test_zillow_error_account_not_authorized(self):
+        """
+        This test checks for account not authorized error
+        Expected error code: 6
+        """
+
+        set_get_deep_search_response(
+            self.api_response_obj.get("error_6_account_not_authorized")
+        )
+
+        zillow_data = ZillowWrapper(self.ZILLOW_API_KEY)
+
+        with pytest.raises(ZillowError) as excinfo:
+            zillow_data.get_deep_search_results(
+                address=self.address, zipcode=self.zipcode
+            )
+        error_msg = "Status 6: This account is not authorized to execute this API call"
+        assert error_msg in str(excinfo.value)
+
+    @responses.activate
     def test_deep_search_results(self):
         """
         Tests parsing of deep_search results
