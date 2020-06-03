@@ -1,4 +1,4 @@
-PyZillow 0.6
+PyZillow 0.7
 ============
 
 .. image:: https://img.shields.io/pypi/dm/pyzillow.svg

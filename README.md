@@ -1,4 +1,4 @@
-PyZillow 0.6
+PyZillow 0.7
 ============
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pyzillow)
