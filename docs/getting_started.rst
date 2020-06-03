@@ -52,7 +52,7 @@ An instance of ``GetDeepSearchResults`` has the following attributes:
 ``.tax_value``
 ``.tax_year``
 ``.total_rooms``
-``.use_Code``
+``.use_code``
 ``.year_built``
 ``.zestimate_amount``
 ``.zestimate_last_updated``
