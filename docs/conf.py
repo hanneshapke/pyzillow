@@ -23,6 +23,9 @@ cwd = os.getcwd()
 parent = os.path.dirname(cwd)
 sys.path.insert(0, parent)
 
+# Add path for _ext/ogtag.py extension
+sys.path.append(os.path.abspath("_ext"))
+
 import pyzillow  # noqa
 
 # -- General configuration -----------------------------------------------------
@@ -32,7 +35,13 @@ import pyzillow  # noqa
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode"]
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    # "sphinx.ext.autosummary"
+    "ogtag",
+]
+# autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -98,6 +107,11 @@ pygments_style = "sphinx"
 
 
 # -- Options for HTML output ---------------------------------------------------
+
+# Constants for _ext/ogtag.py extension
+og_site_url = "https://pyzillow.readthedocs.io/en/latest/"
+og_twitter_site = "@tcmetzger"
+og_fallback_image = "https://www.tcmetzger.de/STATIC/pyzillow_default.png"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
