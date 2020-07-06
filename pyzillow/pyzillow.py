@@ -7,7 +7,8 @@ from . import __version__
 
 
 class ZillowWrapper(object):
-    """This class provides an interface into the Zillow API. An API key is required to create an instance of this class:
+    """This class provides an interface into the Zillow API.
+    An API key is required to create an instance of this class:
 
     >>> from pyzillow.pyzillow import ZillowWrapper
     >>> zillow_data = ZillowWrapper(YOUR_ZILLOW_API_KEY)
@@ -90,7 +91,8 @@ class ZillowWrapper(object):
         return self.get_data(url, params)
 
     def get_data(self, url: str, params: dict):
-        """This method requests data from the API endpoint specified in the url argument. It uses parameters from the params argument.
+        """This method requests data from the API endpoint specified in the url argument.
+        It uses parameters from the params argument.
 
         :param url: URL of API endpoint
         :type url: str
@@ -130,7 +132,7 @@ class ZillowWrapper(object):
             raise ZillowFail
 
         if response.findall("message/code")[0].text != "0":
-            raise ZillowError(int(response.findall("message/code")[0].text))
+            raise ZillowError(int(str(response.findall("message/code")[0].text)))
         else:
             if not response.findall("response"):
                 print("Zillow returned no results for ({})".format(params["address"]))
@@ -143,7 +145,8 @@ class ZillowResults(object):
        and :class:`pyzillow.pyzillow.GetUpdatedPropertyDetails`.
     """
 
-    attribute_mapping = {}
+    def __init__(self):
+        self.attribute_mapping = {}
 
     def get_attr(self, attr):
         """
