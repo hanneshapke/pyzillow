@@ -56,7 +56,7 @@ Getting started
 Ready to contribute? Here's how to set up PyZillow for
 local development.
 
-Fork_ the `pyzillow` repo on GitHub.
+Fork the `pyzillow` repo on GitHub.
 
 Clone your fork locally::
 
